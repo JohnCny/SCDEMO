@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+	<title>XMCI</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+
+	<!-- The styles -->
+	<link href="../static/css/bootstrap.css" rel="stylesheet">
+	<link href="../static/css/main.css" rel="stylesheet">	
+	<link href="../../static/css/jquery-ui-1.8.21.custom.css" rel="stylesheet">
+	<style type="text/css">	
+		*{font-family:myfont1;}
+		a:hover{text-decoration:none;}
+		.nav-list span{color:#0088cc;}
+		#date{line-height:25px;font-size:12px;color:gray;margin-top:-30px;}
+		.tip-info{border:1px solid #dedede;border-radius:5px;padding:10px;width:95%;margin-bottom:20px;box-shadow:0 0 5px #ddd;}
+		.tip-head{font-size:17px;font-weight:bold;color:#666666}
+		.tip-add{font-size:15px;color:#808080;text-decoration:none;}
+		.tip-hover{font-size:15px;color:#0088cc;text-decoration:none;}
+		h4{color:#808080}
+		.tip-info .pull-right{cursor:pointer;width:90px;}
+		.tip-info .pull-right img{margin-top:-4px;}
+		.noContent{width:100%;text-align:center}
+		.noContent p{color:gray}
+		blockquote span{font-size:16px;}
+		.badge{position:relative;top:-1px;margin-left:5px;}
+		.mylist{border:1px solid #ccc;border-radius:5px;background:white;list-style:none;padding:5px 0px;width:80%;position:relative;top:-20px;left:-26px;}
+		.mylist li{line-height:35px;padding-left:10px;}
+		.mylist li:hover{background:#f7f7f7}
+		.myselect{display:inline-block;width:100px;}
+		.ok{text-align:right;}
+	</style>
+</head>
+
+<body onload="showdate();message();datepicker();">	
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">				
+				<a class="brand" href="javascript:void(0);" onclick="iframe('welcome')">厦门消费信贷管理系统</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+						<li class="dropdown">
+							<a href="javascript:void(0);" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">
+								<i class="icon-user"></i>&nbsp;管理员<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+								<li><a href="javascript:void(0);" onclick="$('#content').hide();$('#content_frame').show();">修改密码</a></li>
+								<li class="divider"></li>
+								<li>									
+									<a data-toggle="modal" data-target="#myModal">注销</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="nav" id="topmenu">
+						<li><a href="xxgl">信息管理</a></li>
+						<li><a href="lcgl">流程管理</a></li>						
+					<!-- 	<li><a href="jjgl">进件管理</a></li> -->
+						<!-- <li><a href="tzgl">台账管理</a></li> -->
+						<!-- <li><a href="pfgl">评分管理</a></li> -->
+						<li><a href="jxgl">绩效管理</a></li>
+						<li><a href="tjbb">统计报表</a></li>
+						<li><a href="xtgj">系统工具</a></li>
+
+                        <!-- 系统管理员 -->
+						<li><a href="xtgl">系统管理</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div><!--/.container-fluid -->
+		</div><!--/.navbar-inner -->		
+	</div><!--/.navbar -->
+	<!-- <img src="/static/img/welcome2.png" style="margin-top:40px;"/> -->
+	<div class="container-fluid" style="margin:60px auto 50px;">
+		<div class="row-fluid">
+			<div class="span3">				
+				<div class="well sidebar-nav" id="leftmenu">				
+					<ul class="nav nav-list">
+						<li class="nav-header">用户信息</li>
+						<li>
+							<a data-toggle="modal" data-target="#changeHead"><img src="../static/img/head/wx.jpg" class="img-circle" style="width:50px;box-shadow:1px 1px 10px #ccc;"></a>
+						</li>
+						<li>
+							<span style="color:gray">用户名：管理员</span>
+						</li>
+						<li>
+							<span style="color:gray">职位：客户经理高级主管</span>
+						</li> 
+						<li>
+							<span style="color:gray">所属单位：厦门农村商业银行</span>
+						</li>             
+					</ul>
+				</div><!--/.well -->						
+			</div><!--/span-->
+<!--**************************************************content***********************************************-->
+			<div class="span9 pull-right">					
+				<div id="content">
+					<div class="span6 ">
+					<!--****************************信息管理*************************************-->
+						<div class="tip-info">
+							<img src="../static/img/jiao.png" style="position:absolute;margin-top:-15px;margin-left:-15px;"/>
+							<span class="tip-head">&nbsp;&nbsp;&nbsp;信息管理</span>									
+							<div class="pull-right">
+								<a href="Xzkh" onmouseover="hover(this)" onmouseout="away(this)">
+									<img src="../static/img/add.jpg" />
+									<span class="tip-add">新增客户</span>
+								</a>									
+							</div>
+							<hr/>						
+							<blockquote>
+								<span>客户分配</span><a href="Khfp" class="badge">4</a>
+							</blockquote>
+							<blockquote>
+								<span>客户信息管理</span><a href="Khxxgl" class="badge">4</a>
+							</blockquote>	
+							<blockquote>
+								<span>贷款信息管理</span><a href="Dkxxgl" class="badge">4</a>
+							</blockquote>
+							<hr/>	
+							<a href="xxgl">进入信息管理</a>
+						</div>
+					<!--****************************进件管理*************************************-->
+						<div class="tip-info">
+							<img src="../static/img/jiao.png" style="position:absolute;margin-top:-15px;margin-left:-15px;"/>
+							<span class="tip-head">&nbsp;&nbsp;&nbsp;进件管理</span>	
+							<div class="pull-right">
+								<a href="Xzjj" onmouseover="hover(this)" onmouseout="away(this)">
+									<img src="../static/img/add.jpg" />
+									<span class="tip-add">新增进件</span>
+								</a>
+							</div>							
+							<hr/>	
+							<blockquote>
+								<span>进件审批</span><a href="Jjsp" class="badge">6</a>
+							</blockquote>	
+							<blockquote>
+								<span>黑名单</span><a href="" class="badge">2</a>
+							</blockquote>	
+							<blockquote>
+								<span>系统核验</span><a href="" class="badge">3</a>
+							</blockquote>	
+							<!--没有任务时-->
+						<!-- 	<span class="noContent">
+								<p><img src="../static/img/richeng.jpg" /></p>
+								<p>当前还没有日程</p>
+							</span> -->
+							<hr/>	
+							<a href="jjgl">进入进件管理</a>
+						</div>	
+					</div>
+					<div class="span6">
+					<!--****************************流程管理*************************************-->
+						<div class="tip-info">
+							<img src="../static/img/jiao.png" style="position:absolute;margin-top:-15px;margin-left:-15px;"/>
+							<span class="tip-head">&nbsp;&nbsp;&nbsp;流程管理</span>									
+							<div class="pull-right">
+								<a href="Xzdk" onmouseover="hover(this)" onmouseout="away(this)">
+									<img src="../static/img/add.jpg" />
+									<span class="tip-add">新增贷款</span>
+								</a>									
+							</div>
+							<hr/>						
+							<blockquote>
+								<span>贷款申请审核</span><a href="Dksqsh" class="badge">4</a>
+							</blockquote>
+							<blockquote>
+								<span>贷前调查</span><a href="Dqdc" class="badge">4</a>
+							</blockquote>	
+							<blockquote>
+								<span>贷后管理</span><a href="Dhgl" class="badge">4</a>
+							</blockquote>	
+							<hr/>	
+							<a href="lcgl">进入流程管理</a>
+						</div>
+						<!-- <div class="tip-info">
+							<span class="tip-head">任务管理</span>	
+							<a href="dsp" class="badge">0</a>	
+							<div class="pull-right">
+								<a onmouseover="hover(this)" onmouseout="away(this)" data-toggle="modal" data-target="#newWork">
+									<img src="../static/img/add.jpg" />
+									<span class="tip-add">创建任务</span>	
+								</a>
+							</div>							
+							<hr/>						
+							<!--没有任务时-->
+							<!--<span class="noContent">
+								<p><img src="../static/img/renwu.jpg" /></p>
+								<p>当前还没有任务</p>
+							</span>
+							<hr/>	
+							<a href="rwgl">进入任务管理</a>
+						</div>	 -->
+					<!--****************************统计报表*************************************-->
+						<div class="tip-info">
+							<img src="../static/img/jiao.png" style="position:absolute;margin-top:-15px;margin-left:-15px;"/>
+							<span class="tip-head">&nbsp;&nbsp;&nbsp;统计报表</span>	
+							<!-- <div class="pull-right">
+								<img src="../static/img/add.jpg" />
+								<span class="tip-add">上传文件</span>	
+							</div> -->							
+							<hr/>	
+							<blockquote>
+								<span>已发放的贷款</span><a href="Yffddk" class="badge">4</a>
+							</blockquote>
+							<blockquote>
+								<span>被拒绝的贷款</span><a href="Bjjddk" class="badge">3</a>
+							</blockquote>
+							<blockquote>
+								<span>贷后变更的贷款</span><a href="Dhbgddk" class="badge">2</a>
+							</blockquote>
+							<!--没有任务时-->
+							<!-- <span class="noContent">
+								<p><img src="../static/img/wenjian.jpg" /></p>
+								<p>当前还没有文件</p>
+							</span> -->
+							<hr/>	
+							<a href="tjbb">进入统计报表</a>
+						</div>	
+					</div>
+						
+										
+				</div><!--/content -->
+				<iframe frameborder="0" width="100%" height="280" id="content_frame" src="change_password" style="display:none;"></iframe>
+			</div><!--/span-->
+		</div><!--/row-->		
+    </div><!--/.fluid-container-->		
+ <!-- Button trigger modal -->
+<!--**************************************************foot***********************************************-->
+	<div class="footer">
+		<p class="pull-center">@ 2014 CardPay (Shanghai) Info Tech Co.,Ltd</p>
+		<span id="date" class="pull-right"></span>
+	</div>	
+
+	<!-- 注销 -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:none;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">提示</h4>
+				</div>
+				<div class="modal-body">
+					您确定要退出系统吗？
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<a href="logout" class="btn btn-danger">确定</a>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	
+	<!-- 更换头像 -->
+	<div class="modal fade" id="changeHead" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:none;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">修改头像</h4>
+				</div>
+				<div class="modal-body" style="text-align:center">
+					<img src="../static/img/head/wx.jpg" class="img-circle" id="head"><br/>
+					<input type="file" onchange="alert(this.value);$('#head').attr('src',this.value)" style="width:70px;" accept="image/x-png,image/jpeg"/>	
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="$('#head').attr('src','../static/img/head/wx.jpg')">取消</button>
+					<a href="logout" class="btn btn-danger">确定</a>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	<!-- 创建任务 -->
+	<div class="modal fade" id="newWork" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:none;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">创建任务</h4>
+				</div>
+				<div class="modal-body">
+					<textarea style="width:95%" placeholder="任务内容"></textarea>
+					<!--***********************选择任务分配人*******************************-->
+					<div style="color:gray;display:inline-block;width:50%;margin-top:5px;margin-left:5px;">
+						<span onclick="$('#worker').show();" style="cursor:pointer;" onmouseover="$(this).css('color','#0088cc')" onmouseout="$(this).css('color','gray')">
+							<img src="../static/img/head/wx.jpg" class="img-circle" id="workerimg" style="width:25px;vertical-align:middle;">&nbsp;
+							<b id="workername">admin</b>&nbsp;执行
+						</span>
+						<ul class="mylist" id="worker" style="display:none;position:fixed;width:170px;top:235px;left:400px;">
+							<li onclick="select(this,'worker','workerimg','workername')">
+								<img src="../static/img/head/wx.jpg" class="img-circle head" style="width:25px;">&nbsp;
+								<span class="myselect">admin1</span>
+								<img src="../static/img/ok.png" class="ok">
+							</li>
+							<li onclick="select(this,'worker','workerimg','workername')">
+								<img src="../static/img/head/wx2.jpg" class="img-circle head" style="width:25px;">&nbsp;
+								<span class="myselect">admin2</span>
+								<img src="../static/img/ok.png" class="ok" style="display:none;">
+							</li>
+							<li onclick="select(this,'worker','workerimg','workername')">
+								<img src="../static/img/head/wx3.jpg" class="img-circle head" style="width:25px;">&nbsp;
+								<span class="myselect">admin3</span>
+								<img src="../static/img/ok.png" class="ok" style="display:none;">
+							</li>
+						</ul>
+					</div>
+					<!--***********************选择截至日期*******************************-->
+					<div style="color:gray;display:inline-block;width:45%;margin-top:5px;" onmouseover="$(this).find('img').attr('src','../static/img/richengSmallBlue.jpg');$(this).css('color','#0088cc')" onmouseout="$(this).find('img').attr('src','../static/img/richengSmall.jpg');$(this).css('color','gray')">
+						<img src="../static/img/richengSmall.jpg" style="vertical-align:middle;"/>&nbsp;
+						<span id="deadline">截至日期</span>
+						<input type="text" class="datepicker" style="width:150px;margin-left:-90px;padding:3px;background:none;border:none;box-shadow:none;color:transparent" onchange="$('#deadline').html(this.value)" readonly/>
+					</div>					
+					<!-- <div id="setdate" class="datepicker" style="position:fixed;left:680px;display:none;" onclick="$('#deadline').html(this.value);$('#setdate').hide()"></div> -->
+					<!--***********************选择任务类型*******************************-->
+					<div style="color:gray;display:inline-block;width:50%;margin-top:5px;margin-left:5px;">
+						<span onclick="$('#task').show();" style="cursor:pointer;" onmouseover="$(this).find('img').attr('src','../static/img/renwuSmallBlue.jpg');$(this).css('color','#0088cc')" onmouseout="$(this).find('img').attr('src','../static/img/renwuSmall.jpg');$(this).css('color','gray')">
+							<img src="../static/img/renwuSmall.jpg" style="vertical-align:middle;"/>&nbsp;
+							<span id="taskType">紧急任务</span>
+						</span>
+						<ul class="mylist" id="task" style="display:none;position:fixed;width:170px;top:275px;left:400px;">
+							<li onclick="$('#taskType').html($(this).find('.myselect').html());$('#task').hide();">								
+								<span class="myselect">紧急任务</span>
+							</li>
+							<li onclick="$('#taskType').html($(this).find('.myselect').html());$('#task').hide();">								
+								<span class="myselect">主要任务</span>
+							</li>
+							<li onclick="$('#taskType').html($(this).find('.myselect').html());$('#task').hide();">								
+								<span class="myselect">支线任务</span>
+							</li>
+						</ul>
+					</div>
+					<!--***********************选择多人*******************************-->
+					<!-- <div style="color:gray;display:inline-block;width:45%;margin-top:5px;">
+						<span onclick="$('#addworker').show();" style="cursor:pointer;">
+							<img src="../static/img/add2.jpg" style='width:25px;vertical-align:middle;' id="addworkerimg"/>&nbsp;
+							<span id="workernum"></span>
+						</span>
+						<ul class="mylist" id="addworker" style="display:none;position:fixed;width:170px;top:265px;left:675px;">
+							<li onclick="select2(this,'addworkerimg','workernum')">
+								<img src="../static/img/head/wx.jpg" class="img-circle head" style="width:25px;">&nbsp;
+								<span class="myselect">admin1</span>
+								<img src="../static/img/ok.png" class="ok">
+							</li>
+							<li onclick="select2(this,'addworkerimg','workernum')">
+								<img src="../static/img/head/wx2.jpg" class="img-circle head" style="width:25px;">&nbsp;
+								<span class="myselect">admin2</span>
+								<img src="../static/img/ok.png" class="ok" style="display:none;">
+							</li>
+							<li onclick="select2(this,'addworkerimg','workernum')">
+								<img src="../static/img/head/wx3.jpg" class="img-circle head" style="width:25px;">&nbsp;
+								<span class="myselect">admin3</span>
+								<img src="../static/img/ok.png" class="ok" style="display:none;">
+							</li>
+							<li onclick="$('#addworker').hide();">
+								<a class="btn btn-info btn-mini" >OK</a>
+							</li>
+						</ul>
+					</div> -->
+				</div>
+				<div class="modal-footer">					
+					<a href="welcome" class="btn btn-info" style="width:95%;height:35px;line-height:35px;">创建任务</a>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	
+	<script src="../static/js/jquery-1.7.2.min.js"></script>
+	<script src="../static/js/bootstrap.min.js"></script>	
+	<script src="../../static/js/jquery-ui-1.8.21.custom.min.js"></script>
+	<script src="../static/js/script.js"></script>
+	<script type="text/javascript">
+		function message(){
+			setTimeout(function () {
+				$("#message").fadeOut("slow");
+			}, 3000);//setTimeout
+		}
+		function hover(obj){
+			$(obj).find('img').attr('src','../static/img/addBlue.jpg')
+			$(obj).find('span').attr('class','tip-hover')
+		}
+		function away(obj){
+			$(obj).find('img').attr('src','../static/img/add.jpg')
+			$(obj).find('span').attr('class','tip-add')
+		}
+		function select(obj,listId,imgname,workername){//选择框
+			$("#"+listId).find('.ok').css('display','none')
+			$(obj).find('.ok').css('display','inline')			
+			var img=$(obj).find('.img-circle').attr('src')//获取选择的图片路径
+			var name=$(obj).find('.myselect').html()//获取选择的员工姓名
+			$("#"+imgname).attr('src',img)
+			$("#"+workername).html(name)
+			$("#"+listId).hide();//隐藏选择框
+		}
+		/*var num=1;
+		function select2(obj,imgname,name){
+			if(num>=1){
+				if($(obj).find('.ok').css('display')!='inline'){
+					$(obj).find('.ok').css('display','inline');	
+					++num;
+				}
+				else{
+					$(obj).find('.ok').css('display','none')
+					--num;
+				}
+			}
+			var img=$(obj).find('.img-circle').attr('src')//获取选择的图片路径				
+			$("#"+imgname).attr('class','img-circle')
+			$("#"+imgname).attr('src',img)
+			$("#"+name).html(".&nbsp;"+num)
+		}*/
+	</script>
+</body>
+</html>

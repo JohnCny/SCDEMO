@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+	<title>小微贷款业务管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+
+	<!-- The styles -->
+	<link href="../../../static/css/bootstrap.css" rel="stylesheet">
+	<link href="../../../static/css/main.css" rel="stylesheet">
+	<link href="../../../static/css/datepicker.css" rel="stylesheet">
+	<style type="text/css">	
+		textarea{width:80%;}
+		input.btn-mini{width:20px;position:relative;top:-5px;display:inline-block;}
+	</style>	
+</head>
+
+<body onload="datepicker()">	
+	<form class="content">			
+		<div class="row-fluid">
+			<div class="well place">			
+				<i class="icon-home"></i><a href="#">流程管理</a>/<a href="#">贷后管理</a>
+			</div>	
+			<i class="icon-bookmark"></i><span class="titletip">标准检测</span>
+			<div class="divBorder">				
+				<table class="table-list">		
+					<tr>
+
+						<td class="table-label">借款人</td>
+						<td><input type="text" name="" value="王军忠" readonly="true"/></td>
+						<td class="table-label">客户经理</td>	
+						<td><input type="text" name="" value="倪文彬" readonly="true"/></td>
+					</tr>			
+					<tr>
+						<td class="table-label">客户号</td>
+						<td><input type="text" name="" value="01" readonly="true"/></td>
+						<td class="table-label">合同号</td>
+						<td><input type="text" name="" value="xxx112333" readonly="true"/></td>
+					</tr>		
+					<tr>
+						<td class="table-label">贷款金额</td>
+						<td><input type="text" name="" value="100000" readonly="true"/></td>
+						<td class="table-label">借据号</td>
+						<td><input type="text" name="" value="X12346" readonly="true"/></td>
+					</tr>	
+					<tr>
+						<td class="table-label">放款日</td>
+						<td><input type="text" value="2014-01-01" readonly="true"/></td>
+						<td class="table-label">到期日</td>
+						<td><input type="text"  value="2015-01-01" readonly="true"/></td>
+					</tr>
+					<tr>
+						<td class="table-label">利率</td>
+						<td><input type="text" name="" value="0.345" readonly="true"/>%</td>
+						<td class="table-label">还贷期数</td>
+						<td><input type="text" name="" value="12" readonly="true"/>月</td>			
+					</tr>
+				</table>
+			</div>
+			<!--*****************************************检测记录**************************************************-->
+			<i class="icon-bookmark"></i><span class="titletip">检测记录</span>
+			<input type="button" value="+" onclick="addTd('jcjl','content_frame')" class="btn btn-info btn-mini"/>
+			<input type="button" value="-" onclick="removeTd('jcjl','content_frame')" class="btn btn-info btn-mini"/>
+			<div class="divBorder">
+				<table id="jcjl" class="table-list">
+					<tr>					
+						<th>日期</th>
+						<th>监控方式</th>							
+						<th>监控内容</th>
+						<th>备注</th>								
+					</tr>
+					<tr class="center">				
+						<td><input type="text" name="monitor_date" value="2014-02-01" readonly="true"/></td>
+						<td><input type="text" name="monitor_type" value="电话监控" readonly="true"/></td>
+						<td><input type="text" name="monitor_content" value="担保人情况" readonly="true"/></td>	
+						<td><input type="text" name="monitor_remark" value="" readonly="true"/></td>			
+					</tr>
+					<tr class="center">				
+						<td><input type="text" name="monitor_date" value="2014-02-02" readonly="true"/></td>
+						<td><input type="text" name="monitor_type" value="上门监控" readonly="true"/></td>
+						<td><input type="text" name="monitor_content" value="担保人情况" readonly="true"/></td>	
+						<td><input type="text" name="monitor_remark" value="" readonly="true"/></td>			
+					</tr>
+				</table>
+			</div>
+			<input type="submit" class="btn btn-info" value="提交"/>
+		</div><!--/row-fluid -->
+	</form><!--/content -->
+	
+	<script src="../../../static/js/jquery-1.7.2.min.js"></script>
+	<script src="../../../static/js/bootstrap.min.js"></script>
+	<script src="../../../static/js/bootstrap-datepicker.js"></script>
+	<script src="../../../static/js/script.js"></script>
+	<script src="../../../static/js/process.js"></script>
+	<script type="text/javascript">
+		var max=0;
+		var jegs=0;
+		var num=0;
+		var idCard=0;
+		var phone=0;
+		
+	</script>
+</body>
+</html>

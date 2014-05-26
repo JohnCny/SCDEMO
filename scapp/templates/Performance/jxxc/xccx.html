@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+	<title>小微贷款业务管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+
+	<!-- The styles -->
+	<link href="/static/css/bootstrap.css" rel="stylesheet">
+	<link href="/static/css/main.css" rel="stylesheet">
+	<link href="/static/css/datepicker.css" rel="stylesheet">
+</head>
+
+<body onload="datepicker()">	
+	<div class="content">
+		<div class="well place">			
+			<i class="icon-home"></i><a href="#">绩效管理</a>/<a href="#">薪酬查询</a>
+		</div>	
+		<form method="POST" id="content">
+			<input type="hidden" name="beg_time" value="beg_time">
+			<input type="hidden" name="end_time" value="end_time">	
+			<input type="hidden" name="user_id" value="user_id">	
+		<div class="row-fluid">
+			<i class="icon-bookmark"></i><span class="titletip">薪酬列表</span>
+			<div class="divBorder">				
+				<table class="table-list" cellspacing="10" id="uesr-list">				
+					<tr>	
+						<th>姓名</th>
+						<th>工资时间</th>
+						<th>基本工资</th>
+						<th>绩效薪酬</th>
+						<th>评估结果</th>
+						<th>缴纳风险保证金</th>
+						<th>返还风险保证金</th>
+						<th>逾期金额</th>
+						<th>总工资</th>
+					</tr>					
+					<tbody class="center">
+						<tr class="tbData" onclick="changeColor(this)">
+							<td>倪文彬</td>
+							<td>2014-03</td>		
+							<td>3000</td>						
+							<td>600</td>	
+							<td>合格</td>							
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>3600</td>	
+						</tr>
+						<tr class="tbData" onclick="changeColor(this)">
+							<td>李丽</td>
+							<td>2014-03</td>		
+							<td>3500</td>						
+							<td>600</td>	
+							<td>合格</td>							
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>4100</td>	
+						</tr>
+						<tr class="tbData" onclick="changeColor(this)">
+							<td>葛翔</td>
+							<td>2014-03</td>		
+							<td>2500</td>						
+							<td>600</td>	
+							<td>合格</td>							
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>3100</td>	
+						</tr>
+						<tr class="tbData" onclick="changeColor(this)">
+							<td>熊雷</td>
+							<td>2014-03</td>		
+							<td>3300</td>						
+							<td>600</td>	
+							<td>合格</td>							
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>3900</td>	
+						</tr>
+						<tr class="tbData" onclick="changeColor(this)">
+							<td>吉力</td>
+							<td>2014-03</td>		
+							<td>3200</td>						
+							<td>600</td>	
+							<td>合格</td>							
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>3300</td>	
+						</tr>
+						<tr class="tbData" onclick="changeColor(this)">
+							<td>倪文彬</td>
+							<td>2014-02</td>		
+							<td>3000</td>						
+							<td>600</td>	
+							<td>合格</td>							
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>3600</td>	
+						</tr>
+						<tr class="tbData" onclick="changeColor(this)">
+							<td>李丽</td>
+							<td>2014-02</td>		
+							<td>3500</td>						
+							<td>600</td>	
+							<td>合格</td>							
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>4100</td>	
+						</tr>
+						<tr class="tbData" onclick="changeColor(this)">
+							<td>葛翔</td>
+							<td>2014-02</td>		
+							<td>2500</td>						
+							<td>600</td>	
+							<td>合格</td>							
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>3100</td>	
+						</tr>
+						<tr class="tbData" onclick="changeColor(this)">
+							<td>熊雷</td>
+							<td>2014-02</td>		
+							<td>3300</td>						
+							<td>600</td>	
+							<td>合格</td>							
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>3900</td>	
+						</tr>
+						<tr class="tbData" onclick="changeColor(this)">
+							<td>吉力</td>
+							<td>2014-02</td>		
+							<td>3200</td>						
+							<td>600</td>	
+							<td>合格</td>							
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>3300</td>	
+						</tr>
+					</tbody>									
+				</table>
+			</div>
+			<div class="page-div">
+				<span style="CURSOR: pointer">&lt;&lt;</span>
+				&#160;第&#160;<font color="#0088cc">1</font>&#160;页&#160;
+				&#160;共&#160;<font color="#0088cc">1</font>&#160;页&#160;
+				<span style="CURSOR: pointer">&gt;&gt;</span>
+			</div>
+		</div><!--/row-fluid -->
+	</form>
+	</div><!--/content -->
+	
+	<script src="/static/js/jquery-1.7.2.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/script.js"></script>
+	<script src="/static/js/bootstrap-datepicker.js"></script>
+</body>
+</html>

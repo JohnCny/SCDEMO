@@ -1,0 +1,1042 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+	<title>小微贷款业务管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+
+	<!-- The styles -->
+	<link href="/static/css/bootstrap.css" rel="stylesheet">
+	<link href="/static/css/main.css" rel="stylesheet">
+	<link href="/static/css/datepicker.css" rel="stylesheet">
+	<style type="text/css">
+		.table-list .table-label{width:220px;}	
+		textarea{width:80%;}
+		input.short{width:50px;}
+	</style>
+	<script type="text/javascript">
+		
+	</script>
+</head>
+
+<body onload="datepicker();setje()">	
+	<form class="content" >	
+		<div class="well place">			
+			<i class="icon-home"></i><a href="#">进件管理</a>/<a href="#">录入打分资料</a>
+		</div>	
+	<!--**************************申请信息*********************************-->
+		<i class="icon-bookmark"></i><span class="titletip">基础财务数据调查</span>
+		<div class="divBorder">
+			<table class="table-list">		
+				<tr>
+					<th><b>问题</b></th>
+					<th colspan="2"><b>答案区间</b></th>					
+					<th><b>取值</b></th>
+					<th><b>问题</b></th>	
+					<th colspan="2"><b>答案区间</b></th>	
+					<th><b>取值</b></th>		
+				</tr>
+				<tr class="center">
+					<td class="table-label">老板，这个生意从那年开始做的？</td>
+					<td colspan="3">
+						<input type="text" value="2009年"/>
+					</td>	
+					<td class="table-label">怎么想起来做现在的生意啊？</td>
+					<td colspan="3">
+						<input type="text" value="朋友推荐"/>
+					</td>							
+				</tr>	
+				<tr class="center">
+					<td class="table-label">做生意的第一桶金怎么来的？</td>
+					<td colspan="3">
+						<input type="text" value="贷款"/>
+					</td>	
+					<td class="table-label">这个店开的时候的投资情况还记得吗？</td>
+					<td colspan="3">
+						<input type="text" value="50万"/>
+					</td>							
+				</tr>
+				<tr class="center">
+					<td class="table-label">总投入资金是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">租店花了多少钱？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>						
+				</tr>
+				<tr class="center">
+					<td class="table-label">装修花了多少钱？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">买固定资产花了多少钱？</td>
+					<td>
+						<input type="text" value="50000" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="60000" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="55000" class="short"/>
+					</td>						
+				</tr>
+				<tr class="center">
+					<td class="table-label">进货花了多少钱？</td>
+					<td>
+						<input type="text" value="10000" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="20000" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="15000" class="short"/>
+					</td>
+					<td class="table-label">准备结束后流动资金剩多少？</td>
+					<td>
+						<input type="text" value="10000" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="20000" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="15000" class="short"/>
+					</td>						
+				</tr>
+				<tr class="center">
+					<td class="table-label">投资都是自己的钱吗？</td>
+					<td colspan="3">
+						<input type="text" value="是"/>
+					</td>
+					<td class="table-label">如果有借款，借了多少钱？</td>
+					<td>
+						<input type="text" value="0" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="0" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="0" class="short"/>
+					</td>						
+				</tr>
+				<tr class="center">
+					<td class="table-label">已经还完了吗？什么时候还的？</td>
+					<td colspan="3">
+						<input type="text" value="是"/>
+					</td>
+					<td class="table-label">没还的话还欠多少？</td>
+					<td>
+						<input type="text" value="0" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="0" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="0" class="short"/>
+					</td>						
+				</tr>
+				<tr class="center">
+					<td class="table-label">什么时候要还？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+					<td class="table-label">第一年赚多少钱？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>						
+				</tr>
+				<tr class="center">					
+					<td class="table-label">第二年赚多少钱？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td class="table-label">现在生意稳定吗？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">每年大概能赚多少钱？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td class="table-label">您说的赚的钱包括进货啊、费用啊这些成本吗？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">一年成本大概多少钱呢？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td class="table-label">您平常做生意会不会记账？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">会定期盘点吗？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+					<td class="table-label">您的生意有固定的上下游吗？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">他们的交易量占总销售的比例是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td class="table-label">生意是现金结算还是赊销？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">赊销占的比例是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td class="table-label">主要的赊销客户有哪些？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">主要赊销客户赊销额占总销售额的比例是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td class="table-label">现在的应收账款有多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">有没有预收的货款？主要的预收客户是谁？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+					<td class="table-label">预收账款有多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">我们需要核实一下您的应收账款和预收账款单据，麻烦您一一给我们介绍一下，谢谢。</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+					<td class="table-label">进货的周期是什么样的？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">在什么样的情况下会进货？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">每个月的基础进货量是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">存货会保持在稳定的水平吗？是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">现在的存货有多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">您进货的结算方式是什么样的？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+					<td class="table-label">有没有预付款还没有收到货物的？现在是多少钱？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">有付款凭证吗？有的话麻烦给我们看一看，谢谢。</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+					<td class="table-label">您经营有淡旺季吗？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">每个月平均销售额有多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">造成淡旺季的原因是什么？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">淡季销售额是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">淡季是哪几个月？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">旺季季销售额是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">旺季季是哪几个月？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">一般季节销售额是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">一般季节是哪几个月？</td>
+					<td colspan="2">
+						<input type="text" value=""/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">一个月里每天的销售会有区别吗？还是差不多？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+					<td class="table-label">差的时候一天多少销售？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">好的时候一天多少销售额？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">每天开店的时候店里会留多少钱？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">平均的利润率是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">利润率是怎么计算的？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">主要销售哪些产品？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+					<td class="table-label">a产品每月销售额大概是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">a产品的月销售占整月销售量的多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">a产品利润率大概是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">b产品每月销售额大概是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">b产品的月销售占整月销售量的多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">b产品利润率大概是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">c产品每月销售额大概是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">c产品的月销售占整月销售量的多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">c产品利润率大概是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">其他产品的月销售额大概是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">其他产品的平均利润率大概是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">加权平均成本率为：</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">您每个月的费用支出有哪些？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>	
+				</tr>
+				<tr class="center">					
+					<td class="table-label">一共是多少金额？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">是否有雇佣员工？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>	
+				</tr>
+				<tr class="center">					
+					<td class="table-label">员工人数有几个？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+					<td class="table-label">员工工资是怎么开的？工资里面包括您自己的工资吗？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>	
+				</tr>
+				<tr class="center">					
+					<td class="table-label">工资每月一共多少钱？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">水电费是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">房租多少钱一个月？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">房租支付方式是什么样的？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>	
+				</tr>
+				<tr class="center">					
+					<td class="table-label">押金金额？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">上次支付房租是什么时候？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>	
+				</tr>
+				<tr class="center">					
+					<td class="table-label">每个月的通讯费用大概是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">每月缴税缴多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+				</tr>
+				<tr class="center">					
+					<td class="table-label">您有没有一些其他的收入？比如爱人的收入，或者其他的生意收入？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+					<td class="table-label">其他收入每个月是多少钱？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+				</tr>
+				<tr class="center">					
+					<td class="table-label">每个月家庭的支出有多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td class="table-label">每个月有没有其他的一些支出？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+				</tr>
+				<tr class="center">					
+					<td class="table-label">麻烦您带我们清点一下固定资产和存货</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+					<td class="table-label">您生意上还有有没有什么押金或者质保金等等之类的资金？金额是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+				</tr>
+				<tr class="center">					
+					<td class="table-label">现在有没有这个月应该要付还没付的钱？金额是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td class="table-label">你有没有跟银行贷过款？现在还有余额吗？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">借款金额是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td class="table-label">欠款余额是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">什么时候借的？什么时候还？还款方式是什么？有没有逾期？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>	
+					<td class="table-label">当时借款的原因是什么？借款用来做什么了？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">你有没有跟亲戚朋友借钱？现在还有余额吗？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>	
+					<td class="table-label">借款金额是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">欠款余额是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td class="table-label">什么时候借的？什么时候还？还款方式是什么？有没有逾期？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">当时借款的原因是什么？借款用来做什么了？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+					<td class="table-label">有没有办信用卡？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">信用卡的透支只要是用在消费还是生意上</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+					<td class="table-label">每月平均的透支额度是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+				</tr>
+				<tr class="center">					
+					<td class="table-label">您的生意近三年有没有重大调整，或者您记得比较清楚自己有多少钱的时点？那时候的权益是多少钱？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">从权益时点起的第1年净利润是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+				</tr>
+				<tr class="center">					
+					<td class="table-label">从权益时点起的第2年净利润是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">从那时候到现在有没有什么比较大额的开支？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">开支有多少钱？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">有没有其他的一些收入？金额是多少？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">您有几个银行卡账户？主要使用的有几个？生意上主要使用的是哪个？</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+					<td class="table-label">银行存款现在有多少?</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">我们需要您给我们打印2个主要账户上一年的银行流水，生意相关的和私人的，谢谢</td>
+					<td colspan="3">
+						<input type="text" value=""/>
+					</td>
+					<td class="table-label">今天有没有什么费用支出？?</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+				<tr class="center">					
+					<td class="table-label">今天到现在为止做了多少生意了？</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td class="table-label">现在店里有多少现金？?</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>	
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+					<td>
+						<input type="text" value="" class="short"/>
+					</td>
+				</tr>
+			</table>
+		</div>	
+	
+		<input type="submit" value="保存" class="btn btn-info"/>		
+		<input type="button" class="btn btn-info" value="打印财务数据调查" onclick="window.open('/Print/dy_cwsjdc')"/>	
+	</form>
+
+	<script src="/static/js/jquery-1.7.2.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/script.js"></script>
+	<script src="/static/js/process.js"></script>
+	<script src="/static/js/bootstrap-datepicker.js"></script>
+	<script type="text/javascript">
+		var max=0;
+		var jegs=0;
+		var num=0;
+		var idCard=0;
+		var phone=0;
+	</script>
+</body>
+</html>

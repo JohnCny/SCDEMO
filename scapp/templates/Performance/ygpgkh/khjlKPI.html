@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+	<title>小微贷款业务管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+
+	<!-- The styles -->
+	<link href="/static/css/bootstrap.css" rel="stylesheet">
+	<link href="/static/css/main.css" rel="stylesheet">
+	<link href="/static/css/datepicker.css" rel="stylesheet">
+	<!-- ************************验证样式************************-->
+	<script src="/static/SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+	<link href="/static/SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		textarea{width:80%;}
+		.table-list .table-label{width:180px;}
+		.inline td{border-top:none;}
+		.short{width:50px;}
+	</style>
+</head>
+
+<body onload="datepicker()">	
+	<form class="content" >
+		<div class="well place">			
+			<i class="icon-home"></i><a href="#">绩效管理</a>/<a href="#">在岗评估</a>
+		</div>	
+		<div class="row-fluid">
+			<i class="icon-bookmark"></i><span class="titletip">客户经理KPI评估</span>
+			<div class="divBorder">	
+				<table class="table-list" >				
+					<tr>
+						<td class="table-label" colspan="2">客户经理姓名</td>
+						<td>倪文彬</td>
+						<td class="table-label">客户经理级别</td>
+						<td><input type="text" name="" readonly/></td>						
+					</tr>	
+					<tr>
+						<td class="table-label" colspan="2">评估日期</td>
+						<td><input type="text" name="Date_2" class="datepicker" data-date-format="yyyy-mm-dd" readonly/></td>
+						<td class="table-label">评估月份</td>
+						<td><input type="text" name="assess_date" value="2014-02" readonly /></td>
+					</tr>	
+					<tr>
+						<td class="table-label" rowspan="3" style="width:100px;">本期工作指标</td>
+						<td class="table-label" style="width:90px;">贷款余额</td>
+						<td><input type="text" name="bq_dkye"/></td>
+						<td class="table-label">管户数</td>
+						<td><input type="text" name="bq_ghs"/></td>
+					</tr>	
+					<tr>
+						<td class="table-label" style="width:90px;">新增客户数</td>
+						<td><input type="text" name="bq_khs" /></td>
+						<td class="table-label" rowspan="2">新增贷款折算笔数</td>
+						<td rowspan="2"><input type="text" name="bq_zsbs"/></td>
+					</tr>	
+					<tr>
+						<td class="table-label" style="width:90px;">利息收入</td>
+						<td><input type="text" name="bq_lxsr"/></td>
+					</tr>
+				</table>	
+				<table class="table-list inline" >				
+					<tr class="center">
+						<td class="table-label" colspan="6"><b>考核指标</b></td>			
+					</tr>
+					<tr class="center">
+						<td class="table-label" colspan="2"><b>KPI指标</b></td>			
+						<td class="table-label" style="width:330px;"><b>说明</b></td>	
+						<td class="table-label" style="width:80px;"><b>权重</b></td>
+						<td class="table-label" style="width:150px;"><b>得分</b></td>
+						<td class="table-label" style="width:300px;"><b>分值计算方法</b></td>
+					</tr>
+					<tr class="center">
+						<td rowspan="3">部门业绩</td>			
+						<td>贷款余额</td>	
+						<td>当月贷款规模计划完成情况</td>
+						<td>5</td>
+						<td>
+							<span id="bm_dkye">
+								<input type="text" name="bm_dkye" class="short" onchange="sum()"/>
+								<span class="textfieldRequiredMsg">不能为空</span>
+							</span>								
+						</td>
+						<td>实际完成量÷计划完成量×100%×权重分数</td>
+					</tr>
+					<tr class="center">		
+						<td>管户数</td>	
+						<td>当月管户数计划完成情况</td>
+						<td>5</td>
+						<td>
+							<span id="bm_ghs">
+								<input type="text" name="bm_ghs" class="short" onchange="sum()"/>
+								<span class="textfieldRequiredMsg">不能为空</span>
+							</span>							
+						</td>
+						<td>实际完成量÷计划完成量×100%×权重分数</td>
+					</tr>
+					<tr class="center">		
+						<td>利润贡献度</td>	
+						<td>当月利息收入计划完成情况</td>
+						<td>5</td>						
+						<td>
+							<span id="bm_lrgxd">
+								<input type="text" name="bm_lrgxd" class="short" onchange="sum()"/>
+								<span class="textfieldRequiredMsg">不能为空</span>
+							</span>							
+						</td>
+						<td>实际完成量÷计划完成量×100%×权重分数</td>
+					</tr>
+					<tr class="center">
+						<td rowspan="5">个人业绩</td>			
+						<td>贷款余额</td>	
+						<td>当月贷款规模计划完成情况</td>
+						<td>15</td>
+						<td>
+							<span id="gr_dkye">
+								<input type="text" name="gr_dkye" class="short" onchange="sum()"/>
+								<span class="textfieldRequiredMsg">不能为空</span>
+							</span>
+						</td>
+						<td>实际完成量÷计划完成量×100%×权重分数</td>
+					</tr>
+					<tr class="center">		
+						<td>管户数</td>	
+						<td>当月管户数计划完成情况</td>
+						<td>15</td>
+						<td>
+							<span id="gr_ghs">
+								<input type="text" name="gr_ghs" class="short" onchange="sum()"/>
+								<span class="textfieldRequiredMsg">不能为空</span>
+							</span>							
+						</td>
+						<td>实际完成量÷计划完成量×100%×权重分数</td>
+					</tr>
+					<tr class="center">		
+						<td>新增客户数</td>	
+						<td>当月新增客户数计划完成情况</td>
+						<td>15</td>
+						<td>
+							<span id="gr_xzkhs">
+								<input type="text" name="gr_xzkhs" class="short" onchange="sum()"/>
+								<span class="textfieldRequiredMsg">不能为空</span>
+							</span>								
+						</td>
+						<td>实际完成量÷计划完成量×100%×权重分数</td>
+					</tr>
+					<tr class="center">		
+						<td>新增贷款折算笔数</td>	
+						<td>客户经理级别当月新增贷款折算笔数基本要求完成情况</td>
+						<td>15</td>
+						<td>
+							<span id="gr_zsbs">
+								<input type="text" name="gr_zsbs" class="short" onchange="sum()"/>
+								<span class="textfieldRequiredMsg">不能为空</span>
+							</span>								
+						</td>
+						<td>实际完成量÷计划完成量×100%×权重分数</td>
+					</tr>
+					<tr class="center">		
+						<td>利润贡献度</td>	
+						<td>利息收入当月计划完成情况</td>
+						<td>15</td>
+						<td>
+							<span id="gr_lrgxd">
+								<input type="text" name="gr_lrgxd" class="short" onchange="sum()"/>
+								<span class="textfieldRequiredMsg">不能为空</span>
+							</span>	
+						</td>
+						<td>实际完成量÷计划完成量×100%×权重分数</td>
+					</tr>
+					<tr class="center">
+						<td>日常行为评估</td>			
+						<td>日常行为评估</td>	
+						<td>个人工作状态、出勤状况等</td>
+						<td>10</td>
+						<td>
+							<span id="rcxwpg">
+								<input type="text" name="rcxwpg" class="short" onchange="sum()"/>
+								<span class="textfieldRequiredMsg">不能为空</span>
+							</span>							
+						</td>
+						<td>根据实际情况实行扣分制，由评估人确定</td>
+					</tr>
+					<tr class="center">
+						<td>逾期率</td>			
+						<td>逾期率</td>	
+						<td>逾期率控制情况</td>
+						<td>——</td>
+						<td>
+							<span id="yql">								
+								<input type="text" name="yql" class="short" onchange="sum()"/>%
+								<span class="textfieldRequiredMsg">不能为空</span>
+							</span>								
+						</td>
+						<td>
+							1%≤逾期率≤1.5%，以上三项总分×90%；<br/>
+							1.5%≤逾期率≤2%，以上三项总分×70%；<br/>
+							2%≤逾期率≤3%，以上三项总分×50%；<br/>
+							3%≤逾期率，当月评估为0分
+						</td>
+					</tr>
+					<tr class="center">
+						<td class="table-label" colspan="3"><b>总分</b>
+							<input type="text" name="total" class="short" readonly/></td>
+						<td class="table-label" colspan="3"><b>总评价</b>
+							<select name="result" readonly>
+								<option value="4" selected>不合格</option>
+								<option value="3">合格</option>
+								<option value="2">良好</option>
+								<option value="1">优秀</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="center">其他评价</td>
+						<td colspan="5"><textarea name="qtpj"></textarea></td>
+					</tr>
+				</table>	
+				<table class="table-list inline" >	
+					<tr>
+						<td rowspan="3" style="width:100px;">下期工作指标</td>
+						<td style="width:90px;">贷款余额</td>
+						<td><input type="text" name="xq_dkye"/></td>
+						<td>管户数</td>
+						<td><input type="text" name="xq_ghs" /></td>
+					</tr>	
+					<tr>
+						<td style="width:90px;">新增客户数</td>
+						<td><input type="text" name="xq_xzkhs"/></td>
+						<td rowspan="2">新增贷款折算笔数</td>
+						<td rowspan="2"><input type="text" name="xq_zsbs"/></td>
+					</tr>	
+					<tr>
+						<td style="width:90px;">利息收入</td>
+						<td><input type="text" name="xq_lxsr"/></td>
+					</tr>
+					
+				</table>				
+			</div>
+			
+				<input type="submit" class="btn btn-info" value="提交"/>
+			
+		</div><!--/row-fluid -->
+	</form><!--/content -->
+	
+	<script src="/static/js/jquery-1.7.2.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/script.js"></script>
+	<script src="/static/js/bootstrap-datepicker.js"></script>
+	<script type="text/javascript">
+		var sprytextfield1 = new Spry.Widget.ValidationTextField("bm_dkye", "none", {validateOn:["blur"]});
+		var sprytextfield2 = new Spry.Widget.ValidationTextField("bm_ghs", "none", {validateOn:["blur"]});
+		var sprytextfield3 = new Spry.Widget.ValidationTextField("bm_lrgxd", "none", {validateOn:["blur"]});
+		var sprytextfield4 = new Spry.Widget.ValidationTextField("gr_dkye", "none", {validateOn:["blur"]});
+		var sprytextfield5 = new Spry.Widget.ValidationTextField("gr_ghs", "none", {validateOn:["blur"]});
+		var sprytextfield6 = new Spry.Widget.ValidationTextField("gr_xzkhs", "none", {validateOn:["blur"]});
+		var sprytextfield7 = new Spry.Widget.ValidationTextField("gr_zsbs", "none", {validateOn:["blur"]});
+		var sprytextfield8 = new Spry.Widget.ValidationTextField("gr_lrgxd", "none", {validateOn:["blur"]});
+		var sprytextfield9 = new Spry.Widget.ValidationTextField("rcxwpg", "none", {validateOn:["blur"]});
+		var sprytextfield10 = new Spry.Widget.ValidationTextField("yql", "none", {validateOn:["blur"]});
+		function sum(){
+			var sum=0;
+			var a1=parseFloat($('input[name=bm_dkye]').val());
+			var a2=parseFloat($('input[name=bm_ghs]').val());
+			var a3=parseFloat($('input[name=bm_lrgxd]').val());
+			var a4=parseFloat($('input[name=gr_dkye]').val());
+			var a5=parseFloat($('input[name=gr_ghs]').val());
+			var a6=parseFloat($('input[name=gr_xzkhs]').val());
+			var a7=parseFloat($('input[name=gr_zsbs]').val());			
+			var a8=parseFloat($('input[name=gr_lrgxd]').val());
+			var a9=parseFloat($('input[name=rcxwpg]').val());
+			var a10=parseFloat($('input[name=yql]').val());
+			if(a10<1)
+				sum=a1+a2+a3+a4+a5+a6+a7+a8+a9;
+			if(a10>=1&&a10<=1.5)
+				sum=(a1+a2+a3+a4+a5+a6+a7+a8+a9)*0.9;
+			if(a10>1.5&&a10<=2)
+				sum=(a1+a2+a3+a4+a5+a6+a7+a8+a9)*0.7;
+			if(a10>2&&a10<=3)
+				sum=(a1+a2+a3+a4+a5+a6+a7+a8+a9)*0.5;
+			if(a10>3)
+				sum=0;
+			$('input[name=total]').val(sum);
+			if(sum>=90&&sum<=100){
+				$("select[name=result]").html("<option value='4'>不合格</option><option value='3'>合格</option><option value='2'>良好</option><option value='1' selected>优秀</option>")
+			}
+			if(sum>=80&&sum<90){
+				$("select[name=result]").html("<option value='4'>不合格</option><option value='3'>合格</option><option value='2' selected>良好</option><option value='1'>优秀</option>")
+			}
+			if(sum>=60&&sum<80){
+				$("select[name=result]").html("<option value='4'>不合格</option><option value='3' selected>合格</option><option value='2'>良好</option><option value='1'>优秀</option>")
+			}
+			if(sum<60){
+				$("select[name=result]").html("<option value='4' selected>不合格</option><option value='3'>合格</option><option value='2'>良好</option><option value='1'>优秀</option>")
+			}
+
+		}
+	</script>
+</body>
+</html>
