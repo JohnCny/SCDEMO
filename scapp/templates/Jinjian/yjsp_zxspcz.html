@@ -1,0 +1,798 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+	<title>小微贷款业务管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+
+	<!-- The styles -->
+	<link href="/static/css/bootstrap.css" rel="stylesheet">
+	<link href="/static/css/main.css" rel="stylesheet">
+	<link href="/static/css/datepicker.css" rel="stylesheet">
+	<style type="text/css">
+		input.btn-mini{width:20px;position:relative;top:-5px;display:inline-block;}
+		.table-list .table-label{width:180px}
+	</style>
+</head>
+
+<body onload="">	
+	<div class="content">
+		<div class="row-fluid">
+			<i class="icon-bookmark"></i><span class="titletip">主卡申请人信息</span>
+			<input type="button" class="btn btn-danger btn-mini" onclick="show('zksqr',this)" value="-"/><br/>
+			<div class="divBorder" id="zksqr">				
+				<table class="table-list" cellspacing="10">				
+					<tr>
+						<td class="table-label">证件类型</td>
+						<td>						
+							<select name="" disabled>
+								<option>身份证（18位）</option>
+							</select>
+						</td>													
+						<td class="table-label">证件号码</td>
+						<td><input type="text" value="320404198803563145" readonly/></td>
+						<td rowspan="5"><img src="../../static/img/head/wx.jpg"/></td>
+					</tr>	
+					<tr>
+						<td class="table-label">申领人姓名</td>
+						<td><input type="text" value="公二" readonly/></td>												
+						<td class="table-label">凸字</td>
+						<td><input type="text" value="GONG/ER" readonly/></td>
+					</tr>	
+					<tr>
+						<td class="table-label">性别</td>
+						<td>
+							<select name="" disabled>
+								<option>男</option>
+							</select>						
+						</td>												
+						<td class="table-label">婚姻状况</td>
+						<td>
+							<select name="" disabled>
+								<option>已婚</option>
+							</select>	
+						</td>
+					</tr>
+					<tr>
+						<td class="table-label">年龄</td>
+						<td><input type="text" value="34"/></td>												
+						<td class="table-label"> </td>
+						<td> </td>
+					</tr>
+					<tr>
+						<td class="table-label">行业类别</td>
+						<td><input type="text" value="A002"/> 科教文卫</td>												
+						<td class="table-label">客户类别</td>
+						<td>
+							<select name="" >
+								<option>正常</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">附卡申请人信息</span>
+			<input type="button" class="btn btn-danger btn-mini" onclick="show('fksqr',this)" value="-"/><br/>
+			<div class="divBorder" id="fksqr">				
+				<table class="table-list" cellspacing="10" >				
+					<tr>
+						<td class="table-label">证件类型</td>
+						<td style="width:350px;">
+							<select name="" disabled>
+								<option>身份证（18位）</option>
+							</select>
+						</td>													
+						<td class="table-label">证件号码</td>
+						<td><input type="text" value="320404198803534672" readonly/></td>
+					</tr>	
+					<tr>
+						<td class="table-label">申领人姓名</td>
+						<td><input type="text" value="吴东" readonly/></td>												
+						<td class="table-label">凸字</td>
+						<td><input type="text" value="WU/DONG" readonly/></td>
+					</tr>	
+					<tr>
+						<td class="table-label">性别</td>
+						<td>
+							<select name="" disabled>
+								<option>男</option>
+							</select>						
+						</td>												
+						<td class="table-label">婚姻状况</td>
+						<td>
+							<select name="" disabled>
+								<option>已婚</option>
+							</select>	
+						</td>
+					</tr>
+					<tr>
+						<td class="table-label">年龄</td>
+						<td><input type="text" value=""/></td>												
+						<td class="table-label">单位全称</td>
+						<td><input type="text" value=""/></td>
+					</tr>
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">公安数据</span>
+			<input type="button" class="btn btn-danger btn-mini" onclick="show('gasj',this)" value="-"/><br/>
+			<div class="divBorder" id="gasj">				
+				<table class="table-list" cellspacing="10" >				
+					<tr>
+						<td class="table-label">姓名对比结果</td>
+						<td style="width:350px;">
+							<select name="" disabled>
+								<option>一致</option>
+								<option>不一致</option>
+							</select>
+						</td>													
+						<td class="table-label">身份证对比结果</td>
+						<td>
+							<select name="" disabled>
+								<option>一致</option>
+								<option>不一致</option>
+							</select>
+						</td>
+					</tr>	
+					<tr>
+						<td class="table-label">公安系统查询结果</td>
+						<td colspan="3">
+							<select name="">
+								<option>属实</option>
+								<option>可疑</option>
+							</select>						
+						</td>
+					</tr>	
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">异常信息</span>
+			<input type="button" class="btn btn-danger btn-mini" onclick="show('ycxx',this)" value="-"/><br/>
+			<div class="divBorder" id="ycxx">				
+				<table class="table-list" cellspacing="10" >				
+					<tr>
+						<td class="table-label">是否违反政策</td>
+						<td style="width:350px;">
+							<select name="" disabled>
+								<option>是</option>
+								<option>否</option>
+							</select>		
+							<input type="button" class="btn btn-info" value="查看" onclick=""/><!--文档确实页面介绍-->
+						</td>													
+						<td class="table-label">是否命中黑名单</td>
+						<td>
+							<select name="" disabled>
+								<option>是</option>
+								<option>否</option>
+							</select>
+							<input type="button" class="btn btn-info" value="查看" onclick="showList('hmd')"/>
+						</td>
+					</tr>	
+					<tr>
+						<td class="table-label">是否已持卡</td>
+						<td>
+							<select name="" disabled>
+								<option>是</option>
+								<option>否</option>
+							</select>
+							<input type="button" class="btn btn-info" value="查看" onclick="showList('ckxx')"/>
+						</td>													
+						<td class="table-label">是否历史申请</td>
+						<td>
+							<select name="" disabled>
+								<option>是</option>
+								<option>否</option>
+							</select>
+							<input type="button" class="btn btn-info" value="查看" onclick="showList('lssq')"/>
+						</td>
+					</tr>	
+					<tr>
+						<td class="table-label">防欺诈推荐结论</td>
+						<td>
+							<select name="" disabled>
+								<option>无</option>
+							</select>
+						</td>													
+						<td class="table-label">人行个人信用评估</td>
+						<td><input type="text" name=""/></td>
+					</tr>	
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">数据状态</span>
+			<input type="button" class="btn btn-danger btn-mini" onclick="show('sjzt',this)" value="-"/><br/>
+			<div class="divBorder" id="sjzt">				
+				<table class="table-list" cellspacing="10" >				
+					<tr>
+						<td class="table-label">补件状态</td>
+						<td style="width:350px;"><input type="text" name="" value="未完成" readonly/></td>													
+						<td class="table-label">照会状态</td>
+						<td><input type="text" name="" value="未完成" readonly/></td>	
+					</tr>	
+					<tr>
+						<td class="table-label">人行查询状态</td>
+						<td><input type="text" name="" value="查无此人" readonly/></td>													
+						<td class="table-label">是否有数据异常</td>
+						<td>
+							<select name="" disabled>
+								<option>是</option>
+							</select>
+							<input type="button" class="btn btn-info" value="异常数据处理" onclick="showList('ycsjcl')"/>
+						</td>
+					</tr>						
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">内部评分</span>
+			<input type="button" class="btn btn-danger btn-mini" onclick="show('nbpf',this)" value="-"/><br/>
+			<div class="divBorder" id="nbpf">				
+				<table class="table-list" cellspacing="10" >				
+					<tr>
+						<td class="table-label">分数</td>
+						<td style="width:350px;"><input type="text" name="" value="" /></td>													
+						<td class="table-label">建议信用额度（元）</td>
+						<td><input type="text" name="" value="" /></td>	
+					</tr>	
+					<tr>
+						<td class="table-label">最大建议额度（元）</td>
+						<td><input type="text" name="" value="" /></td>													
+						<td class="table-label">建议动作</td>
+						<td>
+							<select name="" disabled>
+								<option>通过</option>
+								<option>拒绝</option>
+								<option>可疑</option>
+							</select>
+							<input type="button" class="btn btn-info" value="查看" onclick="showList('nbpf')"/>
+						</td>
+					</tr>						
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">人行征信信息</span>
+			<input type="button" class="btn btn-danger btn-mini" onclick="show('rhzxxx',this)" value="-"/><br/>
+			<div class="divBorder" id="rhzxxx">				
+				<table class="table-list" cellspacing="10" >				
+					<tr>
+						<td class="table-label">代为地址对比结果</td>
+						<td style="width:350px;">
+							<select name="" disabled>
+								<option>一致</option>
+								<option>不一致</option>
+								<option>空</option>
+							</select>
+						</td>													
+						<td class="table-label">单位名称对比结果</td>
+						<td>
+							<select name="" disabled>								
+								<option>一致</option>
+								<option>不一致</option>
+								<option>空</option>
+							</select>
+						</td>	
+					</tr>	
+					<tr>
+						<td class="table-label">单位电话对比结果</td>
+						<td>
+							<select name="" disabled>
+								<option>一致</option>
+								<option>不一致</option>
+								<option>空</option>
+							</select>
+						</td>
+						<td class="table-label">单位号码对比结果</td>
+						<td>
+							<select name="" disabled>
+								<option>一致</option>
+								<option>不一致</option>
+								<option>空</option>
+							</select>
+						</td>
+					</tr>	
+					<tr>
+						<td class="table-label">家庭地址对比结果</td>
+						<td>
+							<select name="" disabled>
+								<option>一致</option>
+								<option>不一致</option>
+								<option>空</option>
+							</select>
+						</td>
+						<td class="table-label">家庭电话对比结果</td>
+						<td>
+							<select name="" disabled>
+								<option>一致</option>
+								<option>不一致</option>
+								<option>空</option>
+							</select>
+						</td>
+					</tr>	
+					<tr>
+						<td class="table-label">信用记录（是否有逾期）</td>
+						<td>
+							<select name="" disabled>
+								<option>一致</option>
+								<option>不一致</option>
+								<option>空</option>
+							</select>
+						</td>
+						<td class="table-label">贷款情况（加总贷款余额）</td>
+						<td><input type="text"/></td>
+					</tr>
+					<tr>
+						<td class="table-label">信用卡数量（张）</td>
+						<td><input type="text"/></td>
+						<td class="table-label">信用卡总额度</td>
+						<td><input type="text"/></td>
+					</tr>
+					<tr>
+						<td class="table-label">个人信用情况</td>
+						<td colspan="3">
+							<select name="" disabled>
+								<option></option>
+							</select>
+							<input type="button" class="btn btn-info" value="人行报告" onclick=""/>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">教育信息</span>
+			<input type="button" class="btn btn-danger btn-mini" onclick="show('jyxx',this)" value="-"/><br/>
+			<div class="divBorder" id="jyxx">				
+				<table class="table-list" cellspacing="10" >				
+					<tr>
+						<td class="table-label">教育状况</td>
+						<td style="width:350px;">
+							<select name="" disabled>
+								<option></option>
+							</select>
+						</td>													
+						<td class="table-label">如提供请说明文件类型</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>	
+					</tr>	
+					<tr>
+						<td class="table-label">执业证书提供</td>
+						<td colspan="3">
+							<select name="" >
+								<option></option>
+							</select>
+						</td>
+					</tr>						
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">工作证明信息</span>
+			<input type="button" class="btn btn-danger btn-mini" onclick="show('gzzmxx',this)" value="-"/><br/>
+			<div class="divBorder" id="gzzmxx">				
+				<table class="table-list" cellspacing="10" >				
+					<tr>
+						<td class="table-label">申领人工作单位</td>
+						<td style="width:350px;"><input type="text" value="上海市" name="" readonly/></td>													
+						<td class="table-label">工作证明文件类型</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>	
+					</tr>	
+					<tr>
+						<td class="table-label">114查询工作单位情况</td>
+						<td>
+							<select name="" >
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">工商网站查询工作单位情况</td>
+						<td>
+							<select name="" >
+								<option></option>
+							</select>
+						</td>
+						<tr>
+						<td class="table-label">是否重点行业或重点单位</td>
+						<td colspan="3">
+							<select name="" >
+								<option></option>
+							</select>
+						</td>
+					</tr>
+					</tr>						
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">收入证明信息</span>
+			<input type="button" class="btn btn-danger btn-mini" onclick="show('srzmxx',this)" value="-"/><br/>
+			<div class="divBorder" id="srzmxx">				
+				<table class="table-list" cellspacing="10" >				
+					<tr>
+						<td class="table-label">本人年综合收入（万元）</td>
+						<td style="width:350px;"><input type="text" value=""/></td>													
+						<td class="table-label">证明收入余额（万元）</td>
+						<td><input type="text" value=""/></td>	
+					</tr>	
+					<tr>
+						<td class="table-label">是否符合收入条件</td>
+						<td colspan="3">
+							<select name="" >
+								<option></option>
+							</select>
+						</td>						
+					</tr>					
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">资产证明信息</span>
+			<input type="button" class="btn btn-danger btn-mini" onclick="show('zczmxx',this)" value="-"/><br/>
+			<div class="divBorder" id="zczmxx">				
+				<table class="table-list" cellspacing="10" >				
+					<tr>
+						<td class="table-label">是否提供资产证明文件</td>
+						<td style="width:350px;">
+							<select name="" >
+								<option></option>
+							</select>
+						</td>													
+						<td class="table-label">住宅情况（总平米）</td>
+						<td><input type="text" value=""/></td>	
+					</tr>	
+					<tr>
+						<td class="table-label">商铺情况（总平米）</td>
+						<td><input type="text" value=""/></td>	
+						<td class="table-label">营业执照实收资本</td>
+						<td><input type="text" value=""/></td>							
+					</tr>	
+					<tr>
+						<td class="table-label">申请人职务说明</td>
+						<td><input type="text" value=""/></td>	
+						<td class="table-label">出资金额</td>
+						<td><input type="text" value=""/></td>							
+					</tr>	
+					<tr>
+						<td class="table-label">客户车产提供情况（数量）</td>
+						<td><input type="text" value=""/></td>	
+						<td class="table-label">客户底店提供情况（总平米）</td>
+						<td><input type="text" value=""/></td>							
+					</tr>						
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">电话信息</span>
+			<input type="button" class="btn btn-danger btn-mini" onclick="show('dhxx',this)" value="-"/><br/>
+			<div class="divBorder" id="dhxx">				
+				<table class="table-list">				
+					<tr>
+						<th></th>
+						<th>单位号码：051982564158</th>
+						<th>手机号码：15062222028</th>	
+						<th>住宅电话：051975623459</th>
+					</tr>	
+					<tr>
+						<td class="table-label">人行征信</td>
+						<td>
+							<input type="text" value="" style="width:100px;"/>
+							<label><input type="radio" name="radio10"/>一致</label>
+							<label><input type="radio" name="radio10"/>不一致</label>
+							<label><input type="radio" name="radio10" checked/>置空</label>
+						</td>	
+						<td>
+							<input type="text" value="" style="width:100px;"/>
+							<label><input type="radio" name="radio11"/>一致</label>
+							<label><input type="radio" name="radio11"/>不一致</label>
+							<label><input type="radio" name="radio11" checked/>置空</label>
+						</td>	
+						<td>
+							<input type="text" value="" style="width:100px;"/>
+							<label><input type="radio" name="radio12"/>一致</label>
+							<label><input type="radio" name="radio12"/>不一致</label>
+							<label><input type="radio" name="radio12" checked/>置空</label>
+						</td>	
+					</tr>	
+					<tr>
+						<td class="table-label">已持卡</td>
+						<td>
+							<input type="text" value="" style="width:100px;"/>
+							<label><input type="radio" name="radio13"/>一致</label>
+							<label><input type="radio" name="radio13"/>不一致</label>
+							<label><input type="radio" name="radio13" checked/>置空</label>
+						</td>	
+						<td>
+							<input type="text" value="" style="width:100px;"/>
+							<label><input type="radio" name="radio14"/>一致</label>
+							<label><input type="radio" name="radio14"/>不一致</label>
+							<label><input type="radio" name="radio14" checked/>置空</label>
+						</td>	
+						<td>
+							<input type="text" value="" style="width:100px;"/>
+							<label><input type="radio" name="radio15"/>一致</label>
+							<label><input type="radio" name="radio15"/>不一致</label>
+							<label><input type="radio" name="radio15" checked/>置空</label>
+						</td>	
+					</tr>	
+					<tr>
+						<td class="table-label">外部数据</td>
+						<td>
+							<input type="text" value="" style="width:100px;"/>
+							<label><input type="radio" name="radio16"/>一致</label>
+							<label><input type="radio" name="radio16"/>不一致</label>
+							<label><input type="radio" name="radio16" checked/>置空</label>
+						</td>	
+						<td>
+							<input type="text" value="" style="width:100px;"/>
+							<label><input type="radio" name="radio17"/>一致</label>
+							<label><input type="radio" name="radio17"/>不一致</label>
+							<label><input type="radio" name="radio17" checked/>置空</label>
+						</td>	
+						<td>
+							<input type="text" value="" style="width:100px;"/>
+							<label><input type="radio" name="radio18"/>一致</label>
+							<label><input type="radio" name="radio18"/>不一致</label>
+							<label><input type="radio" name="radio18" checked/>置空</label>
+						</td>	
+					</tr>										
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">单位地址</span>
+			<input type="button" class="btn btn-danger btn-mini" onclick="show('dwdz',this)" value="-"/><br/>
+			<div class="divBorder" id="dwdz">				
+				<table class="table-list">				
+					<tr>
+						<td class="table-label">单位地址</td>
+						<td style="background:#eeeeee;"><input type="text" value="常州市天宁区关河东路"  style="width:250px;" readonly/></td>
+					</tr>	
+					<tr>
+						<td class="table-label">人行征信</td>
+						<td>
+							<input type="text" value="" style="width:250px;"/>
+							<label><input type="radio" name="radio20"/>一致</label>
+							<label><input type="radio" name="radio20"/>不一致</label>
+							<label><input type="radio" name="radio20" checked/>置空</label>
+						</td>	
+					</tr>	
+					<tr>
+						<td class="table-label">已持卡</td>
+						<td>
+							<input type="text" value="" style="width:250px;"/>
+							<label><input type="radio" name="radio21"/>一致</label>
+							<label><input type="radio" name="radio21"/>不一致</label>
+							<label><input type="radio" name="radio21" checked/>置空</label>
+						</td>							
+					</tr>	
+					<tr>
+						<td class="table-label">外部数据</td>
+						<td>
+							<input type="text" value="" style="width:250px;"/>
+							<label><input type="radio" name="radio22"/>一致</label>
+							<label><input type="radio" name="radio22"/>不一致</label>
+							<label><input type="radio" name="radio22" checked/>置空</label>
+						</td>
+					</tr>	
+					<!--图片信息不全-->				
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">单位信息</span>
+			<input type="button" class="btn btn-danger btn-mini" onclick="show('dwxx',this)" value="-"/><br/>
+			<div class="divBorder" id="dwxx">				
+				<table class="table-list">				
+					<tr>
+						<td class="table-label">单位全称</td>
+						<td style="background:#eeeeee;"><input type="text" value="九州环宇大酒店"  style="width:250px;" readonly/></td>
+					</tr>	
+					<tr>
+						<td class="table-label">人行征信</td>
+						<td>
+							<input type="text" value="" style="width:250px;"/>
+							<label><input type="radio" name="radio30"/>一致</label>
+							<label><input type="radio" name="radio30"/>不一致</label>
+							<label><input type="radio" name="radio30" checked/>置空</label>
+						</td>	
+					</tr>	
+					<tr>
+						<td class="table-label">已持卡</td>
+						<td>
+							<input type="text" value="" style="width:250px;"/>
+							<label><input type="radio" name="radio31"/>一致</label>
+							<label><input type="radio" name="radio31"/>不一致</label>
+							<label><input type="radio" name="radio31" checked/>置空</label>
+						</td>							
+					</tr>	
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">申请汇总信息</span>
+			<input type="button" class="btn btn-danger btn-mini" onclick="show('sqhzxx',this)" value="-"/><br/>
+			<div class="divBorder" id="sqhzxx">				
+				<table class="table-list">				
+					<tr>
+						<td class="table-label">申请书条形码</td>
+						<td colspan="3"><input type="text" value="56233541111006" readonly/></td>
+					</tr>	
+					<tr>
+						<td class="table-label">申请类型</td>
+						<td style="width:350px;">
+							<select name="" disabled>
+								<option>主附卡</option>
+							</select>
+						</td>	
+						<td class="table-label">卡片所属分行</td>
+						<td><input type="text" value="4200" readonly/></td>
+					</tr>	
+					<tr>
+						<td class="table-label">区域</td>
+						<td>
+							<select name="" disabled>
+								<option>总行</option>
+							</select>
+						</td>
+						<td class="table-label">类别</td>
+						<td>
+							<select name="" disabled>
+								<option>正常件</option>
+							</select>
+						</td>						
+					</tr>	
+					<tr>
+						<td class="table-label">申请产品类型</td>
+						<td>
+							<select name="" disabled>
+								<option>024淘宝联名金卡</option>
+							</select>
+						</td>
+						<td class="table-label">专案代码</td>
+						<td>
+							<select name="" disabled>
+								<option></option>
+							</select>
+						</td>						
+					</tr>	
+					<tr>
+						<td class="table-label">卡片费用类型</td>
+						<td>
+							<select name="" disabled>
+								<option>12开卡激活后收取年费</option>
+							</select>
+						</td>
+						<td class="table-label">账单日</td>
+						<td><input type="text" value="21" readonly/></td>						
+					</tr>	
+				</table>
+			</div>
+			<!-- <i class="icon-bookmark"></i><span class="titletip">征信审批</span>
+			<input type="button" class="btn btn-danger btn-mini" onclick="show('zxsp',this)" value="-"/><br/>
+			<div class="divBorder" id="zxsp">				
+				<table class="table-list">				
+					<tr>
+						<td class="table-label">再次处理人员</td>
+						<td style="width:350px;"><input type="text" value="蒋小平" readonly/></td>
+						<td class="table-label">再次处理结果</td>
+						<td>
+							<select name="" disabled>
+								<option>通过</option>
+							</select>
+						</td>
+					</tr>	
+					<tr>
+						<td class="table-label">前次处理原因</td>
+						<td>
+							<select name="" disabled>
+								<option></option>
+							</select>
+						</td>	
+						<td class="table-label">前次处理额度</td>
+						<td><input type="text" value="" /></td>
+					</tr>	
+					<tr>
+						<td class="table-label">前次处理附卡额度百分比(%)</td>
+						<td><input type="text" value="" /></td>
+						<td class="table-label">前次处理附卡固定额度(万元)</td>
+						<td><input type="text" value="" /></td>
+					</tr>	
+					<tr>
+						<td class="table-label">前次处理结果意见</td>
+						<td colspan="3"><textarea style="width:80%"></textarea></td>
+					</tr>	
+					<tr>						
+						<td class="table-label">是否忽略异常信息</td>
+						<td>							
+							<label><input type="radio" name="radio40"/>是</label>
+							<label><input type="radio" name="radio40" checked/>否</label>
+						</td>						
+						<td class="table-label">是否命中银联黑名单</td>
+						<td>							
+							<label><input type="radio" name="radio41"/>是</label>
+							<label><input type="radio" name="radio41" checked/>否</label>
+						</td>						
+					</tr>	
+					<tr>						
+						<td class="table-label">是否是特例审批</td>
+						<td>							
+							<label><input type="radio" name="radio42"/>是</label>
+							<label><input type="radio" name="radio42" checked/>否</label>
+						</td>						
+						<td class="table-label">是否财政大机</td>
+						<td>							
+							<label><input type="radio" name="radio43"/>是</label>
+							<label><input type="radio" name="radio43" checked/>否</label>
+						</td>						
+					</tr>	
+					<tr>
+						<td class="table-label">特例审批原因</td>
+						<td colspan="3"><input type="text" name="" class="long"></td>
+					</tr>	
+					<tr>
+						<td class="table-label">建议额度（万元）<font class="red">*</font></td>
+						<td><input type="text" name=""></td>
+						<td class="table-label">核准<font class="red">*</font></td>
+						<td>
+							<select name="" >
+								<option></option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="table-label">附卡额度百分比(%)</td>
+						<td><input type="text" value="" /></td>
+						<td class="table-label">附卡固定额度（万元）</td>
+						<td><input type="text" value="" /></td>
+					</tr>
+					<tr>
+						<td class="table-label">取消</td>
+						<td>
+							<select name="" >
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">拒绝</td>
+						<td>
+							<select name="" >
+								<option></option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="table-label">征信初审意见<font class="red">*</font></td>
+						<td colspan="3"><textarea style="width:80%"></textarea></td>
+					</tr>	
+				</table>
+			</div>
+			<input type="button" class="btn btn-info" value="提交"/>
+			<input type="button" class="btn btn-info" value="审批表" onclick="window.open('/Jinjian/dy_spb')"/> -->
+		</div><!--/row-fluid -->
+	</div><!--/content -->
+	
+	<script src="/static/js/jquery-1.7.2.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/bootstrap-datepicker.js"></script>
+	<script src="/static/js/script.js"></script>	
+    <script src="/static/js/Loan_Calculator.js"></script>
+	<script type="text/javascript">
+		function show(id,obj){
+			if($("#"+id).css('display')=="none"){
+				$("#"+id).show();
+				$(obj).val("-");
+				//Frame();
+			}
+			else{
+				$("#"+id).hide();				
+				$(obj).val("+");
+				//Frame();
+			}			
+		}
+		function showList(name){
+			$('#text',window.parent.document).show();
+			var html="<div class=topDiv ><input type='button' class='btn btn-info btn-mini pull-right' value='关闭' onclick='$(\"#text\",window.parent.document).hide();'/><br/>"
+			if(name=="hmd"){
+				$('#text',window.parent.document).html(html+"<iframe src='Jinjian/hmdList' width=100% height=90% frameborder=0></iframe></div>");				
+			}
+			if(name=="ckxx"){
+				$('#text',window.parent.document).html(html+"<iframe src='Jinjian/yckxxList' width=100% height=90% frameborder=0></iframe></div>");				
+			}
+			if(name=="lssq"){
+				$('#text',window.parent.document).html(html+"<iframe src='Jinjian/lssqjList' width=100% height=90% frameborder=0></iframe></div>");
+			}
+			if(name=="ycsjcl"){
+				$('#text',window.parent.document).html(html+"<iframe src='Jinjian/ycsjclList' width=100% height=90% frameborder=0></iframe></div>");
+			}
+			if(name=="nbpf"){
+				$('#text',window.parent.document).html(html+"<iframe src='Jinjian/dfb_info' width=100% height=90% frameborder=0></iframe></div>");
+			}
+		}
+		
+	</script>
+</body>
+</html>

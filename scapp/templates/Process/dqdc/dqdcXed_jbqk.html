@@ -1,0 +1,486 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+	<title>小微贷款业务管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+
+	<!-- The styles -->
+	<link href="/static/css/bootstrap.css" rel="stylesheet">
+	<link href="/static/css/main.css" rel="stylesheet">
+	<link href="/static/css/datepicker.css" rel="stylesheet">
+	<style type="text/css">
+		#jbTable .table-label{width:80px;}	
+		.sqxx .table-list .table-label{width:130px;}
+		textarea{width:80%;}
+		
+	</style>
+	<script type="text/javascript">
+		function setje(){
+			$('input[name]').click();
+			// $('input[name=gszczj]').click();
+			// $('input[name=loan_amount_num]').click();
+			// $('input[name=month_repayment]').click();
+			// $('input[name=loan_amount]').click();
+			// $('input[name=overage]').click();
+			// $('input[name=guarantee_amount]').click();
+
+			// $('input[name=appraisal]').click();
+			// $('input[name=mortgage]').click();
+			// $('input[name=amount_recommended]').click();
+			// $('input[name=monthly_repayment_amount]').click();
+			// $('input[name=amount]').click();
+			// $('input[name=monthly_repayment]').click();
+		}
+	</script>
+</head>
+
+<body onload="datepicker();setje()">	
+	<form class="content">
+	<!--**************************个人信息*********************************-->
+		<i class="icon-bookmark"></i><span class="titletip">个人信息&nbsp;&nbsp;&nbsp;客户编号：<span id="customer_no">
+			01
+		</span></span>
+		<div class="divBorder">
+			<table class="table-list">
+				<tr>
+					<td class="table-label">姓名</td>
+					<td>
+						<span>王军忠</span>
+						<input type="hidden" name="customer_name" value=""/>
+					</td>	
+					<td class="table-label">性别</td>
+					<td>
+						<span>男</span>
+					</td>
+					<td class="table-label">手机</td>
+					<td><span id="">13813802000</span></td>
+					<td class="table-label">固定电话</td>
+					<td><span id="">0519-83291468</span></td>			
+				</tr>					
+				<tr>							
+					<td class="table-label">证件类型</td>
+					<td colspan="3"><span id="">身份证</span></td>	
+					<td class="table-label">证件号码</td>
+					<td colspan="3"><span id="">32040419890224314X</span></td>											
+				</tr>
+				<tr>
+					<td class="table-label">家庭地址</td>
+					<td colspan="7"><span id="">北京市朝阳区光华贸易中心3-2012店铺</span></td>							
+				</tr>	
+				<tr>
+					<td class="table-label">家庭情况表述</td>
+					<td colspan="7"><span id=""></span></td>							
+				</tr>	
+				<tr>
+					<td class="table-label">婚姻状况</td>
+					<td><span>丧偶</span></td>
+					<td class="table-label">居住条件</td>
+					<td><span id="">自置</span></td>	
+					<td class="table-label">教育程度</td>
+					<td colspan="3"><span id="">大学</span></td>				
+				</tr>			
+			</table>
+		</div>
+	<!--**************************公司信息*********************************-->
+	<!-- 	<i class="icon-bookmark"></i><span class="titletip">公司信息&nbsp;&nbsp;&nbsp;客户编号：<span id="customer_no">
+			customer.customer_no
+		</span></span>
+		<div class="divBorder">
+			<table class="table-list">
+				<tr>
+					<td class="table-label" style="width:120px;">公司名称</td>
+					<td>
+						<span>customer.customer_name</span>
+						<input type="hidden" name="customer_name" value="customer.customer_name"/>
+					</td>
+					<td class="table-label">法人代表</td>
+					<td><span id="">customer.frdb</span></td>
+				</tr>					
+				<tr>
+					<td class="table-label">营业执照号码</td>
+					<td><span id="">customer.yyzz</span></td>
+					<td class="table-label">税务登记证号码</td>
+					<td><span id="">customer.swdjz</span></td>			
+				</tr>					
+				<tr>							
+					<td class="table-label">公司注册资金(元)</td>
+					<td>
+						<input type="text" name="gszczj" onclick="setJe(this);" value="1000000" disabled/>
+						<span id="gszczj_hj" class="je"></span>
+					</td>	
+					<td class="table-label">公司营业范围</td>
+					<td><span id="">customer.gsyyfw</span></td>
+				</tr>					
+				<tr>
+					<td class="table-label">公司成立日期</td>
+					<td><span id="">customer.gsclrq</span></td>	
+					<td class="table-label">公司注册类型</td>
+					<td><span id="">customer.regisiter_type.type_name</span></td>							
+				</tr>	
+				<tr>
+					<td class="table-label">基本户帐号</td>
+					<td><span id="">customer.jbhzh</span></td>
+					<td class="table-label">公司注册地址</td>
+					<td><span id="">customer.zcdz</span></td>				
+				</tr>		
+			</table>
+		</div> -->
+	<!--**************************申请信息*********************************-->
+		<i class="icon-bookmark"></i><span class="titletip">申请信息</span>
+		<div class="divBorder">
+			<table class="table-list">				
+				<tr>
+					<td class="table-label">贷款金额（元）<font class="red">*</font></td>
+					<td>
+						<span id="loan_amount_num">	
+							<input type="text" name="loan_amount_num" value="100000" onclick="setJe(this)" maxlength="11" disabled/><br/>
+							<span class="je">人民币</span>	
+							<span class="errorInfo"></span>							
+						</span>	
+					</td>	
+					<td class="table-label">贷款期限（月）<font class="red">*</font></td>
+					<td>12月</td>	
+					<td class="table-label">月还款能力（元）<font class="red">*</font></td>
+					<td>
+						<span id="month_repayment">	
+							<input type="text" name="month_repayment" value="8500" onclick="setJe(this)" maxlength="11" disabled/><br/>
+							<span class="je">人民币</span>	
+							<span class="errorInfo"></span>							
+						</span>	
+					</td>						
+				</tr>	
+				<tr>
+					<td class="table-label">贷款用途<font class="red">*</font></td>
+					<td>固定资产贷款</td>	
+					<td class="table-label">详细说明</td>
+					<td colspan="3"><input type="text" name="details" value="客户想扩大经营,增加新服饰,扩大店铺面积" class="long" disabled/></td>						
+				</tr>
+				<tr>
+					<td class="table-label">还款来源</td>
+					<td colspan="5"><input type="text" name="repayment_source" value="经营收入" class="long" disabled/></td>									
+				</tr>	
+			</table>
+		</div>	
+	<!--*****************************************信贷历史**************************************************-->
+		<i class="icon-bookmark"></i><span class="titletip">信贷历史</span>
+		<div class="divBorder">
+			<table id="xdls" class="table-list">
+				<tr>
+					<th>融资来源</th>
+					<th>贷款金额(元)</th>
+					<th>期限(月)</th>							
+					<th>用途</th>
+					<th>发放日期</th>
+					<th>余额(元)</th>		
+					<th>担保</th>
+					<th>逾期信息</th>									
+				</tr>
+				<tr class="center"><!--后期Js中要增加ID字段-->
+					<td>
+						<span>	
+							<input type="text" name="financing_sources" onchange="spryMaxLength(this,3)" class="tbInput" disabled/><br/>
+							<span>&nbsp;</span>
+							<span class="errorInfo">字符数不得大于256</span>
+						</span>
+					</td>
+					<td>
+						<span>	
+							<input type="text" name="loan_amount"  onkeyup="setJe(this);" maxlength="11" class="tbInput" onclick="setJe(this)" disabled/><br/>
+							<span class="je">人民币</span>	
+							<span class="errorInfo"></span>						
+						</span>
+					</td>							
+					<td>
+						<input type="text" name="deadline" maxlength="5" class="tbInput" disabled/><br/>
+						<span>&nbsp;</span>
+					</td>	
+					<td>
+						<span>	
+							<input type="text" name="use" onchange="spryMaxLength(this,3)" class="tbInput" disabled/><br/>
+							<span>&nbsp;</span>
+							<span class="errorInfo">字符数不得大于256</span>
+						</span>
+					</td>
+					<td>
+						<span>
+						    <input type="text" name="release_date" class="tbInput datepicker" data-date-format="yyyy-mm-dd" disabled/><br/>
+							<span>&nbsp;</span>
+							<!-- <span class="textfieldInvalidFormatMsg">格式无效</span> -->
+						</span>						
+					</td>	
+					<td>
+						<span>	
+							<input type="text" name="overage"  onkeyup="setJe(this);" maxlength="11" class="tbInput" onclick="setJe(this)" disabled/> <br/>
+							<span class="je">人民币</span>
+							<span class="errorInfo"></span>						
+						</span>
+					</td>	
+					<td>
+						<span >	
+							<input type="text" name="guarantee" onchange="spryMaxLength(this,32)" class="tbInput" disabled/><br/>
+							<span>&nbsp;</span>
+							<span class="errorInfo">字符数不得大于32</span>
+						</span>
+					</td>
+					<td>
+						<span >	
+							<input type="text" name="late_information" onchange="spryMaxLength(this,256)" class="tbInput" disabled/><br/>
+							<span>&nbsp;</span>
+							<span class="errorInfo">字符数不得大于256</span>
+						</span>
+					</td>						
+				</tr>
+			</table>
+		</div>
+	<!--*****************************************是否为他人担保**************************************************-->
+		<i class="icon-bookmark"></i><span class="titletip">是否为他人担保</span>
+		<div class="divBorder">
+			<table id="sfwtrdb" class="table-list">
+				<tr class="font-small">
+					<th>银行</th>
+					<th>被担保人</th>
+					<th>担保金额</th>								
+				</tr>
+				<tr class="center"><!--后期Js中要增加ID字段-->
+					<td><input type="text" name="bank" value=" " disabled/></td>	
+					<td><input type="text" name="guarantor" value=" " disabled/></td>	
+					<td>
+						<span>	
+							<input type="text" name="guarantee_amount"   onkeyup="setJe(this);" maxlength="11" onclick="setJe(this)" disabled/> <br/>
+							<span class="je">人民币</span>
+							<span class="errorInfo"></span>						
+						</span>
+					</td>						
+				</tr>
+			</table>
+		</div>
+	<!--*****************************************风险分析以及调查结论**************************************************-->
+		<i class="icon-bookmark"></i><span class="titletip">风险分析以及调查结论</span>
+		<div class="divBorder">
+			<table class="table-list">				
+				<tr>
+					<td class="table-label">分析结论</td>
+					<td colspan="7">
+						<span>
+							<textarea name="analysis_conclusion" onchange="spryMaxLength(this,2048)"> </textarea>
+							<span class="errorInfo">字符数不得大于2048</span>
+						<span>
+					</td>								
+				</tr>
+				<tr>
+					<td class="table-label">需要审议的其他内容</td>
+					<td colspan="7">
+						<span>
+							<textarea name="other_deliberations" value="riskanalysis_and_findings.other_deliberations" style="width:80%" onchange="spryMaxLength(this,2048)"></textarea>
+							<span class="errorInfo">字符数不得大于2048</span>
+						</span>						
+					</td>
+				</tr>	
+				<tr>					
+					<td class="table-label" rowspan="2">正反因素分析</td>
+					<td class="table-label">正</td>
+					<td colspan="4">
+						<span>
+							<textarea name="positive" value="riskanalysis_and_findings.positive" style="width:80%"onchange="spryMaxLength(this,2048)"></textarea>
+							<span class="errorInfo">字符数不得大于2048</span>
+						</span>	
+					</td>
+				</tr>
+				<tr>
+					<td class="table-label">反</td>
+					<td colspan="4">
+						<span>
+							<textarea name="opposite" value="riskanalysis_and_findings.opposite" style="width:80%"onchange="spryMaxLength(this,2048)"></textarea>
+							<span class="errorInfo">字符数不得大于2048</span>
+						</span>	
+					</td>
+				</tr>
+			</table>
+		</div>
+	<!--*****************************************调查结论**************************************************-->
+		<div class="divBorder">
+			<table class="table-list">				
+				<tr>
+					<td class="table-label" style="font-size:12px;">客户信息收集与核实</td>
+					<td class="font-small">
+						<script>
+								var verification = riskanalysis_and_findings.verification
+								if(parseInt(parseInt(verification)&1) != 0){
+									document.write("<label><input type='checkbox' name='verification' value='1' checked/>营业执照</label>")
+								}else{
+									document.write("<label><input type='checkbox' name='verification' value='1'/>营业执照</label>")
+								}
+								if(parseInt(parseInt(verification)&2) != 0){
+									document.write("<label><input type='checkbox' name='verification' value='2' checked/>房产证</label>")
+								}else{
+									document.write("<label><input type='checkbox' name='verification' value='2'/>房产证</label>")
+								}
+								if(parseInt(parseInt(verification)&4) != 0){
+									document.write("<label><input type='checkbox' name='verification' value='4' checked/>租赁合同</label>")
+								}else{
+									document.write("<label><input type='checkbox' name='verification' value='4'/>租赁合同</label>")
+								}
+								if(parseInt(parseInt(verification)&8) != 0){
+									document.write("<label><input type='checkbox' name='verification' value='8' checked/>供销即采购合同</label>")
+								}else{
+									document.write("<label><input type='checkbox' name='verification' value='8'/>供销即采购合同</label>")
+								}
+								if(parseInt(parseInt(verification)&16) != 0){
+									document.write("<label><input type='checkbox' name='verification' value='16' checked/>账单</label>")
+								}else{
+									document.write("<label><input type='checkbox' name='verification' value='16'/>账单</label>")
+								}
+								if(parseInt(parseInt(verification)&32) != 0){
+									document.write("<label><input type='checkbox' name='verification' value='32' checked/>存货清单</label>")
+								}else{
+									document.write("<label><input type='checkbox' name='verification' value='32'/>存货清单</label>")
+								}
+								if(parseInt(parseInt(verification)&64) != 0){
+									document.write("<label><input type='checkbox' name='verification' value='64' checked/>银行存款账户</label>")
+								}else{
+									document.write("<label><input type='checkbox' name='verification' value='64'/>银行存款账户</label>")
+								}
+								if(parseInt(parseInt(verification)&128) != 0){
+									document.write("<label><input type='checkbox' name='verification' value='128' checked/>现金</label>")
+								}else{
+									document.write("<label><input type='checkbox' name='verification' value='128'/>现金</label>")
+								}
+								if(parseInt(parseInt(verification)&256) != 0){
+									document.write("<label><input type='checkbox' name='verification' value='256' checked/>其他")
+								}else{
+									document.write("<label><input type='checkbox' name='verification' value='256'/>其他")
+								}
+							</script>
+							<input type="text" name="others" style="width:80px;" value="riskanalysis_and_findings.others"/></label>
+					</td>											
+				</tr>
+			</table>
+		</div>
+	<!--*****************************************是否同意发放**************************************************-->
+			<label onclick="$('#jyff').show();$('#jyfj').hide();doubleIframe('dqdcWd_jbqk');">
+			<input type="radio" name="bool_grant" value="1" checked/>建议发放
+		</label>
+		<label onclick="$('#jyfj').show();$('#jyff').hide();doubleIframe('dqdcWd_jbqk');">
+			<input type="radio" name="bool_grant" value="0" />建议否决
+		</label><br/>
+	<!--*****************************************调查结论**************************************************-->
+		<div class="divBorder" id="jyff">
+			<table class="table-list">				
+				<tr>
+					<td class="table-label" rowspan="3" style="width:60px;">调查结论</td>
+					<td class="table-label" style="width:80px;">金额（元）<font class="red">*</font></td>
+					<td>
+						<span>	
+							<input type="text" name="amount" style="width:100px;" value="100000" onkeyup="setJe(this);" maxlength="11" onclick="setJe(this)"/><br/>
+							<span class="je">人民币</span>
+							<span class="errorInfo"></span>						
+						</span>
+					</td>	
+					<td class="table-label" style="width:50px;">期限(月)<font class="red">*</font></td>
+					<td>
+						<select name="deadline" style="width:60px">						
+							<option value="1" >1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12" selected>12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+						</select>月
+						<!-- <input type="text" name="deadline" style="width:40px;" value="riskanalysis_and_findings.deadline" onKeyUp="value=value.replace(/\D/g,'')" maxlength="4"/>月 -->
+					</td>	
+					<td class="table-label" style="width:50px;">利率<font class="red">*</font></td>
+					<td>
+						<span>
+							<input type="text" style="width:40px" name="rates" value="0.345" onKeyUp="value=value.replace(/[^\d\.]/g,'')" onchange="check(this,0,100)" maxlength="4"/>%<br/>
+							<span class="errorInfo">请输入0-100的数</span>
+						</span>
+					</td>
+					<td class="table-label" style="width:110px;">月还款额（元）<font class="red">*</font></td>
+					<td>
+						<span>	
+							<input type="text" name="monthly_repayment" value="8500" onkeyup="setJe(this);" maxlength="11" class="tbInput" onclick="setJe(this)"/><br/>
+							<span class="je">人民币</span>
+							<span class="errorInfo"></span>						
+						</span>
+					</td>										
+				</tr>
+				<tr>
+					<td class="table-label"> 建议担保方式</td>
+					<td colspan="3" >
+						<span>
+							<input type="text" style="width:70%" name="recommended_way_of_security" onchange="spryMaxLength(this,32)" value="担保人担保"/>
+							<span class="errorInfo">字符数不得大于32</span>
+						<span>
+					</td>
+					<td colspan="2" class="table-label"> 月付款占可支配收入比重</td>	
+					<td colspan="2">
+						<span>
+							<input type="text" style="width:40px" name="income_ratio" value="" onKeyUp="value=value.replace(/[^\d\.]/g,'')" onchange="check(this,0,100)" maxlength="4"/>%<br/>
+							<span class="errorInfo">请输入0-100的数</span>
+						</span>
+					</td>	
+				</tr>
+				<tr>
+					<td class="table-label" style="width:80px;">建议理由/发放条件</td>
+					<td colspan="7">
+						<span>	
+							<textarea name="approve_reason" onchange="spryMaxLength(this,2048)">1.客户经营状况良好 2.抵押物足值</textarea>
+							<span class="errorInfo">字符数不得大于2048</span>
+						</span>
+					</td>															
+				</tr>
+			</table>
+		</div>
+	<!--*****************************************调查结论**************************************************-->
+		<div class="divBorder" id="jyfj" style="display:none;">
+			<table class="table-list">				
+				<tr>
+					<td class="table-label" rowspan="3" style="width:60px;">调查结论</td>					
+					<td class="table-label" style="width:80px;">否决原因</td>
+					<td colspan="7">
+						<span>	
+							<textarea name="refuse_reason" onchange="spryMaxLength(this,2048)"></textarea>
+							<span class="errorInfo">字符数不得大于2048</span>
+						</span>
+					</td>															
+				</tr>
+			</table>
+		</div>
+		<input type="submit" value="保存" class="btn btn-info"/>
+	</form>
+
+	<script src="/static/js/jquery-1.7.2.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/bootstrap-datepicker.js"></script>
+	<script src="/static/js/script.js"></script>
+	<script src="/static/js/process.js"></script>
+	<script type="text/javascript">
+		var max=0;
+		var jegs=0;
+		var num=0;
+		var idCard=0;
+		var phone=0;
+	</script>
+</body>
+</html>

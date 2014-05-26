@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+	<title>小微贷款业务管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+
+	<!-- The styles -->
+	<link href="/static/css/bootstrap.css" rel="stylesheet">
+	<link href="/static/css/main.css" rel="stylesheet">		
+	<!-- ************************验证样式************************-->
+	<script src="/static/SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+	<link href="/static/SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		.table-list .table-label{width:150px;}
+	</style>
+</head>
+
+<body>	
+	<div class="content">
+		<div class="well place">			
+			<i class="icon-home"></i><a href="#">系统管理</a>/<a href="#">处理要素评分卡管理</a>
+		</div>		
+		<div class="row-fluid">			
+			<form >
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label">处理要素评分卡编号<font class="red">*</font></td>
+							<td><input type="text" name=""/></td>
+							<td class="table-label">处理要素评分卡名称<font class="red">*</font></td>
+							<td><input type="text" name=""/></td>
+						</tr>														
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">处理要素</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<th>处理要素名称</th>	
+							<th>分值</th>
+							<th>是否加入评分</th>
+						</tr>	
+						<tr class="center">
+							<td>申请人其他银行卡确认</td>	
+							<td><input type="text" name=""/></td>	
+							<td>
+								<label><input type="radio" name="radio1" value="1" />是</label>
+								<label><input type="radio" name="radio1" value="0" checked/>否</label>
+							</td>	
+						</tr>	
+						<tr class="center">
+							<td>申请人就职公司及工作状况确认</td>	
+							<td><input type="text" name=""/></td>	
+							<td>
+								<label><input type="radio" name="radio2" value="1" />是</label>
+								<label><input type="radio" name="radio2" value="0" checked/>否</label>
+							</td>	
+						</tr>	
+						<tr class="center">
+							<td>申请人银行贷款确认</td>	
+							<td><input type="text" name=""/></td>	
+							<td>
+								<label><input type="radio" name="radio3" value="1" />是</label>
+								<label><input type="radio" name="radio3" value="0" checked/>否</label>
+							</td>	
+						</tr>	
+						<tr class="center">
+							<td>申请人电话联系确认</td>	
+							<td><input type="text" name=""/></td>	
+							<td>
+								<label><input type="radio" name="radio4" value="1" />是</label>
+								<label><input type="radio" name="radio4" value="0" checked/>否</label>
+							</td>	
+						</tr>	
+						<tr class="center">
+							<td>申请人居住地址确认</td>	
+							<td><input type="text" name=""/></td>	
+							<td>
+								<label><input type="radio" name="radio5" value="1" />是</label>
+								<label><input type="radio" name="radio5" value="0" checked/>否</label>
+							</td>	
+						</tr>	
+						<tr class="center">
+							<td>申请人亲笔签名确认</td>	
+							<td><input type="text" name=""/></td>	
+							<td>
+								<label><input type="radio" name="radio6" value="1" />是</label>
+								<label><input type="radio" name="radio6" value="0" checked/>否</label>
+							</td>	
+						</tr>	
+						<tr class="center">
+							<td>申请人家庭电话确认</td>	
+							<td><input type="text" name=""/></td>	
+							<td>
+								<label><input type="radio" name="radio7" value="1" />是</label>
+								<label><input type="radio" name="radio7" value="0" checked/>否</label>
+							</td>	
+						</tr>	
+						<tr class="center">
+							<td>申请人联系人确认</td>	
+							<td><input type="text" name=""/></td>	
+							<td>
+								<label><input type="radio" name="radio8" value="1" />是</label>
+								<label><input type="radio" name="radio8" value="0" checked/>否</label>
+							</td>	
+						</tr>	
+						<tr class="center">
+							<td>申请人推荐人确认</td>	
+							<td><input type="text" name=""/></td>	
+							<td>
+								<label><input type="radio" name="radio9" value="1" />是</label>
+								<label><input type="radio" name="radio9" value="0" checked/>否</label>
+							</td>	
+						</tr>	
+						<tr class="center">
+							<td>担保真实确认</td>	
+							<td><input type="text" name=""/></td>	
+							<td>
+								<label><input type="radio" name="radio10" value="1" />是</label>
+								<label><input type="radio" name="radio10" value="0" checked/>否</label>
+							</td>	
+						</tr>	
+						<tr class="center">
+							<td>担保人工作状况确认</td>	
+							<td><input type="text" name=""/></td>	
+							<td>
+								<label><input type="radio" name="radio11" value="1" />是</label>
+								<label><input type="radio" name="radio11" value="0" checked/>否</label>
+							</td>	
+						</tr>	
+						<tr class="center">
+							<td>担保人亲笔签名确认</td>	
+							<td><input type="text" name=""/></td>	
+							<td>
+								<label><input type="radio" name="radio12" value="1" />是</label>
+								<label><input type="radio" name="radio12" value="0" checked/>否</label>
+							</td>	
+						</tr>	
+					</table>
+				</div>
+				
+				
+				<span class="point">*为必填字段</span><br/>
+				<input type="submit" class="btn btn-info" value="提交" style="margin:0;"/>
+			</form>
+		</div><!--/row-fluid -->
+	</div><!--/content -->
+
+	<script src="/static/js/jquery-1.7.2.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/script.js"></script>
+	<script src="/static/js/system.js"></script>
+	<script type="text/javascript">
+		var sprytextfield2 = new Spry.Widget.ValidationTextField("spry_jgmc", "none", {validateOn:["blur"]});
+	</script>
+</body>
+</html>

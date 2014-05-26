@@ -1,0 +1,497 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+	<title>小微贷款业务管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+
+	<!-- The styles -->
+	<link href="/static/css/bootstrap.css" rel="stylesheet">
+	<link href="/static/css/main.css" rel="stylesheet">		
+	<!-- ************************验证样式************************-->
+	<script src="/static/SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+	<link href="/static/SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		input[type=text]{width:50px;}
+	</style>
+</head>
+
+<body>	
+	<div class="content">
+		<div class="well place">			
+			<i class="icon-home"></i><a href="#">系统管理</a>/<a href="#">评分卡管理</a>
+		</div>		
+		<div class="row-fluid">			
+			<form >
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label">评分卡编号<font class="red">*</font></td>
+							<td><input type="text" name="" value="001"/></td>
+							<td class="table-label">评分卡说明<font class="red">*</font></td>
+							<td><input type="text" name="" value="厦门灵活金" style="width:180px"/></td>
+							<td class="table-label">评分卡总分<font class="red">*</font></td>
+							<td><input type="text" name="" value="30" readonly/></td>
+						</tr>														
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">住房情况</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label"><b>加入评分</b></td>	
+							<td><input type="checkbox" name="" checked/></td>	
+							<td class="table-label"><b>项目分数</b></td>	
+							<td colspan="7"><input type="text" name="" value="10"/></td>									
+						</tr>	
+						<tr>
+							<td class="table-label">自置房屋(无贷款)</td>	
+							<td><input type="text" name="" value="10"/></td>		
+							<td class="table-label">自置房屋(有贷款)</td>	
+							<td><input type="text" name="" value="8"/></td>	
+							<td class="table-label">与父母同住</td>	
+							<td><input type="text" name="" value="6"/></td>		
+							<td class="table-label">租房</td>	
+							<td><input type="text" name="" value="5"/></td>
+							<td class="table-label">无房</td>
+							<td><input type="text" name="" value="0"/></td>	
+						</tr>
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">金融资金状况(我行)</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label"><b>加入评分</b></td>	
+							<td><input type="checkbox" name="" checked/></td>	
+							<td class="table-label"><b>项目分数</b></td>	
+							<td colspan="7"><input type="text" name="" value="10"/></td>								
+						</tr>	
+						<tr>
+							<td class="table-label">20万以上</td>	
+							<td style="width:83px"><input type="text" name="" value="10"/></td>		
+							<td class="table-label">20万以下</td>	
+							<td style="width:83px"><input type="text" name="" value="5"/></td>		
+							<td class="table-label">无</td>	
+							<td colspan="5"><input type="text" name="" value="0"/></td>
+						</tr>	
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">大件消费品拥有情况(车)</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label"><b>加入评分</b></td>	
+							<td><input type="checkbox" name="" checked/></td>	
+							<td class="table-label"><b>项目分数</b></td>	
+							<td colspan="7"><input type="text" name="" value="10"/></td>									
+						</tr>	
+						<tr>
+							<td class="table-label">完全产权车</td>	
+							<td style="width:83px"><input type="text" name="" value="10"/></td>		
+							<td class="table-label">贷款购车</td>	
+							<td style="width:83px"><input type="text" name="" value="5"/></td>		
+							<td class="table-label">无</td>	
+							<td colspan="5"><input type="text" name="" value="0"/></td>
+						</tr>	
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">单位性质</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label"><b>加入评分</b></td>	
+							<td><input type="checkbox" name=""/></td>	
+							<td class="table-label"><b>项目分数</b></td>	
+							<td colspan="7"><input type="text" name=""/></td>								
+						</tr>	
+						<tr>
+							<td class="table-label">机关/事业单位</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">国有</td>	
+							<td><input type="text" name=""/></td>	
+							<td class="table-label">独资</td>	
+							<td><input type="text" name=""/></td>	
+							<td class="table-label">合资</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">股份制</td>	
+							<td><input type="text" name=""/></td>						
+						</tr>
+						<tr>
+							<td class="table-label">私营</td>
+							<td><input type="text" name=""/></td>	
+							<td class="table-label">其他</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">失业无其他救济</td>	
+							<td colspan="5"><input type="text" name=""/></td>	
+						</tr>						
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">现工作单位工龄</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label">加入评分</td>	
+							<td><input type="checkbox" name=""/></td>	
+							<td class="table-label">项目分数</td>	
+							<td colspan="7"><input type="text" name=""/></td>								
+						</tr>	
+						<tr>
+							<td class="table-label">10年以上</td>	
+							<td style="width:83px"><input type="text" name=""/></td>		
+							<td class="table-label">5-10年</td>	
+							<td style="width:83px"><input type="text" name=""/></td>	
+							<td class="table-label">1-5年</td>	
+							<td style="width:83px"><input type="text" name=""/></td>	
+							<td class="table-label">1年以下</td>	
+							<td colspan="3"><input type="text" name=""/></td>					
+						</tr>					
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">在现居住地居住时间</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label">加入评分</td>	
+							<td><input type="checkbox" name=""/></td>	
+							<td class="table-label">项目分数</td>	
+							<td colspan="7"><input type="text" name=""/></td>								
+						</tr>	
+						<tr>
+							<td class="table-label">6年以上</td>	
+							<td style="width:83px"><input type="text" name=""/></td>		
+							<td class="table-label">2-6年</td>	
+							<td style="width:83px"><input type="text" name=""/></td>				
+							<td class="table-label">2年以下</td>	
+							<td colspan="5"><input type="text" name=""/></td>			
+						</tr>				
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">婚姻状况</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label">加入评分</td>	
+							<td><input type="checkbox" name=""/></td>	
+							<td class="table-label">项目分数</td>	
+							<td colspan="7"><input type="text" name=""/></td>								
+						</tr>	
+						<tr>
+							<td class="table-label">已婚有子女</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">已婚无子女</td>	
+							<td><input type="text" name=""/></td>	
+							<td class="table-label">未婚</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">离婚</td>	
+							<td><input type="text" name=""/></td>	
+							<td class="table-label">再婚</td>	
+							<td><input type="text" name=""/></td>				
+						</tr>			
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">户籍情况</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label">加入评分</td>	
+							<td><input type="checkbox" name=""/></td>	
+							<td class="table-label">项目分数</td>	
+							<td colspan="7"><input type="text" name=""/></td>								
+						</tr>	
+						<tr>
+							<td class="table-label">本地户口</td>	
+							<td style="width:83px"><input type="text" name=""/></td>		
+							<td class="table-label">本地农户</td>	
+							<td style="width:83px"><input type="text" name=""/></td>	
+							<td class="table-label">外地户口</td>	
+							<td colspan="5"><input type="text" name=""/></td>					
+						</tr>
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">教育程度</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label">加入评分</td>	
+							<td><input type="checkbox" name=""/></td>	
+							<td class="table-label">项目分数</td>	
+							<td colspan="7"><input type="text" name=""/></td>								
+						</tr>	
+						<tr>
+							<td class="table-label">硕士及以上</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">本科</td>	
+							<td><input type="text" name=""/></td>	
+							<td class="table-label">大专</td>	
+							<td><input type="text" name=""/></td>	
+							<td class="table-label">高中及中专</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">初中及以下</td>	
+							<td><input type="text" name=""/></td>						
+						</tr>	
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">职业资格证书拥有情况</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label">加入评分</td>	
+							<td><input type="checkbox" name=""/></td>	
+							<td class="table-label">项目分数</td>	
+							<td colspan="7"><input type="text" name=""/></td>								
+						</tr>	
+						<tr>
+							<td class="table-label">高级</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">中级</td>	
+							<td><input type="text" name=""/></td>	
+							<td class="table-label">初级</td>	
+							<td><input type="text" name=""/></td>	
+							<td class="table-label">其他</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">无</td>	
+							<td><input type="text" name=""/></td>						
+						</tr>	
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">职称</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label">加入评分</td>	
+							<td><input type="checkbox" name=""/></td>	
+							<td class="table-label">项目分数</td>	
+							<td colspan="7"><input type="text" name=""/></td>								
+						</tr>	
+						<tr>
+							<td class="table-label">高级</td>	
+							<td style="width:83px"><input type="text" name=""/></td>		
+							<td class="table-label">中级</td>	
+							<td style="width:83px"><input type="text" name=""/></td>	
+							<td class="table-label">初级</td>	
+							<td style="width:83px"><input type="text" name=""/></td>	
+							<td class="table-label">其他</td>	
+							<td colspan="3"><input type="text" name=""/></td>					
+						</tr>	
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">年龄</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label">加入评分</td>	
+							<td><input type="checkbox" name=""/></td>	
+							<td class="table-label">项目分数</td>	
+							<td colspan="7"><input type="text" name=""/></td>								
+						</tr>	
+						<tr>
+							<td class="table-label">18-30岁</td>	
+							<td style="width:83px"><input type="text" name=""/></td>		
+							<td class="table-label">30-45岁</td>	
+							<td style="width:83px"><input type="text" name=""/></td>	
+							<td class="table-label">15-55岁</td>	
+							<td style="width:83px"><input type="text" name=""/></td>	
+							<td class="table-label">55岁以上</td>	
+							<td colspan="3"><input type="text" name=""/></td>				
+						</tr>
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">健康情况</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label">加入评分</td>	
+							<td><input type="checkbox" name=""/></td>	
+							<td class="table-label">项目分数</td>	
+							<td colspan="7"><input type="text" name=""/></td>								
+						</tr>	
+						<tr>
+							<td class="table-label">良好</td>	
+							<td style="width:83px"><input type="text" name=""/></td>		
+							<td class="table-label">一般</td>	
+							<td style="width:83px"><input type="text" name=""/></td>	
+							<td class="table-label">差</td>	
+							<td colspan="5"><input type="text" name=""/></td>			
+						</tr>	
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">公共记录</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label">加入评分</td>	
+							<td><input type="checkbox" name=""/></td>	
+							<td class="table-label">项目分数</td>	
+							<td colspan="7"><input type="text" name=""/></td>								
+						</tr>	
+						<tr>
+							<td class="table-label">无</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">拖欠记录</td>	
+							<td><input type="text" name=""/></td>	
+							<td class="table-label">不良诉讼记录</td>	
+							<td><input type="text" name=""/></td>	
+							<td class="table-label">治安处罚记录</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">犯罪记录</td>	
+							<td><input type="text" name=""/></td>						
+						</tr>	
+						<tr>
+							<td class="table-label">未确定</td>	
+							<td colspan="9"><input type="text" name=""/></td>					
+						</tr>
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">职务</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label">加入评分</td>	
+							<td><input type="checkbox" name=""/></td>	
+							<td class="table-label">项目分数</td>	
+							<td colspan="7"><input type="text" name=""/></td>								
+						</tr>	
+						<tr>
+							<td class="table-label">厅局级及以上(公务员)</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">处级(公务员)</td>	
+							<td><input type="text" name=""/></td>	
+							<td class="table-label">科级(公务员)</td>	
+							<td><input type="text" name=""/></td>	
+							<td class="table-label">一般干部(公务员)</td>	
+							<td><input type="text" name=""/></td>			
+							<td class="table-label">企业负责人</td>	
+							<td><input type="text" name=""/></td>				
+						</tr>	
+						<tr>
+							<td class="table-label">中高层管理人员</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">一般管理人员</td>	
+							<td><input type="text" name=""/></td>	
+							<td class="table-label">私营业主</td>	
+							<td><input type="text" name=""/></td>	
+							<td class="table-label">一般员工</td>	
+							<td colspan="3"><input type="text" name=""/></td>	
+						</tr>	
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">个人月收入(税前)</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label">加入评分</td>	
+							<td><input type="checkbox" name=""/></td>	
+							<td class="table-label">项目分数</td>	
+							<td colspan="7"><input type="text" name=""/></td>									
+						</tr>	
+						<tr>
+							<td class="table-label">1万元以上</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">0.8-1万元</td>	
+							<td><input type="text" name=""/></td>
+							<td class="table-label">0.5-0.8万元</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">0.3-0.5万元</td>	
+							<td><input type="text" name=""/></td>	
+							<td class="table-label">0.1-0.3万元</td>	
+							<td><input type="text" name=""/></td>
+						</tr>
+						<tr>
+							<td class="table-label">0.1万元以下</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">无</td>	
+							<td colspan="7"><input type="text" name=""/></td>
+						</tr>						
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">债务收入比</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label">加入评分</td>	
+							<td><input type="checkbox" name=""/></td>	
+							<td class="table-label">项目分数</td>	
+							<td colspan="7"><input type="text" name=""/></td>								
+						</tr>	
+						<tr>
+							<td class="table-label">0</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">0-15%</td>								
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">16-25%</td>	
+							<td><input type="text" name=""/></td>
+							<td class="table-label">26-35%</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">36-49%</td>								
+							<td><input type="text" name=""/></td>
+						</tr>	
+						<tr>
+							<td class="table-label">>50%</td>	
+							<td colspan="9"><input type="text" name=""/></td>	
+						</tr>
+					</table>
+				</div>				
+				<i class="icon-bookmark"></i><span class="titletip">赡养人口</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label">加入评分</td>	
+							<td><input type="checkbox" name=""/></td>	
+							<td class="table-label">项目分数</td>	
+							<td colspan="7"><input type="text" name=""/></td>								
+						</tr>	
+						<tr>
+							<td class="table-label">无</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">1人</td>	
+							<td><input type="text" name=""/></td>	
+							<td class="table-label">2人</td>	
+							<td><input type="text" name=""/></td>
+							<td class="table-label">3人</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">3人以上</td>	
+							<td><input type="text" name=""/></td>							
+						</tr>				
+					</table>
+				</div>
+				<i class="icon-bookmark"></i><span class="titletip">推荐人</span>			
+				<div class="divBorder">
+					<table class="table-list">
+						<tr>
+							<td class="table-label">加入评分</td>	
+							<td><input type="checkbox" name=""/></td>	
+							<td class="table-label">项目分数</td>	
+							<td colspan="7"><input type="text" name=""/></td>								
+						</tr>	
+						<tr>
+							<td class="table-label">本公司员工推荐</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">其他中介推荐</td>	
+							<td><input type="text" name=""/></td>	
+							<td class="table-label">银行推荐</td>	
+							<td><input type="text" name=""/></td>
+							<td class="table-label">已担保客户推荐</td>	
+							<td><input type="text" name=""/></td>		
+							<td class="table-label">无</td>	
+							<td><input type="text" name=""/></td>							
+						</tr>				
+					</table>
+				</div>
+				<span class="point">*为必填字段</span><br/>
+				<input type="submit" class="btn btn-info" value="提交" style="margin:0;"/>
+			</form>
+		</div><!--/row-fluid -->
+	</div><!--/content -->
+
+	<script src="/static/js/jquery-1.7.2.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/script.js"></script>
+	<script src="/static/js/system.js"></script>
+	<script type="text/javascript">
+		var sprytextfield2 = new Spry.Widget.ValidationTextField("spry_jgmc", "none", {validateOn:["blur"]});
+	</script>
+</body>
+</html>

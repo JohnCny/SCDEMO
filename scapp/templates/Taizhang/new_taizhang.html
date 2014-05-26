@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+	<title>小微贷款业务管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+
+	<!-- The styles -->
+	<link href="../../../static/css/bootstrap.css" rel="stylesheet">
+	<link href="../../../static/css/main.css" rel="stylesheet">
+	<link href="../../../static/css/datepicker.css" rel="stylesheet">
+	<style type="text/css">	
+		textarea{width:80%;}
+		input.btn-mini{width:20px;position:relative;top:-5px;display:inline-block;}
+		.tbInput{width:70%}
+		select{width:90px}
+	</style>	
+</head>
+
+<body onload="datepicker()">	
+	<form class="content">			
+		<div class="row-fluid">
+			<div class="well place">			
+			<i class="icon-home"></i><a href="#">信息管理</a>/<a href="#">信用卡客户信息管理</a>	
+			</div>	
+			<i class="icon-bookmark"></i><span class="titletip">客户信息</span>
+			<div class="divBorder">				
+				<table class="table-list">		
+					<tr>
+
+						<td class="table-label">姓名</td>
+						<td style="width:415px">王军忠</td>
+						<td class="table-label">性别</td>	
+						<td>男</td>
+					</tr>			
+					<tr>
+						<td class="table-label">单位名称</td>
+						<td>喜来登服饰专营</td>
+						<td class="table-label">联系电话</td>
+						<td>138020001562</td>
+					</tr>	
+					<tr>
+						<td class="table-label">卡种</td>
+						<td>信用卡</td>
+						<td class="table-label">家庭住址</td>
+						<td>北京市朝阳区光华贸易中心3-2012店铺</td>
+					</tr>
+					<tr>
+						<td class="table-label">信用额度</td>
+						<td>50000</td>
+						<td class="table-label">申请时间</td>
+						<td>2014-05-01</td>			
+					</tr>
+				</table>
+			</div>
+			<!--*****************************************维护信息**************************************************-->
+			<i class="icon-bookmark"></i><span class="titletip">维护信息</span>
+			<input type="button" value="+" onclick="addTd('whxx','content_frame')" class="btn btn-info btn-mini"/>
+			<input type="button" value="-" onclick="removeTd('whxx','content_frame')" class="btn btn-info btn-mini"/>
+			<div class="divBorder">
+				<table id="whxx" class="table-list">
+					<tr>					
+						<th>维护时间</th>
+						<th>维护方式</th>							
+						<th>用卡频率</th>
+						<th>自然情况</th>	
+						<th>职业情况</th>
+						<th>财产状况</th>							
+						<th>与银行关系</th>
+						<th>德行评价</th>
+						<th>客户新增需求</th>							
+						<th>综合意见</th>
+						<th>备注</th>							
+					</tr>
+					<tr class="center">				
+						<td>2014-01-06</td>
+						<td>电话联系</td>
+						<td>经常</td>
+						<td>男，35岁</td>
+						<td>经理</td>
+						<td>年收入20万</td>
+						<td>持有我行一张信用卡</td>
+						<td>良好</td>
+						<td>提高信用卡额度</td>
+						<td>调高额度</td>
+						<td></td>		
+					</tr>
+					<tr class="center">				
+						<td>2014-05-06</td>
+						<td>上门联系</td>
+						<td>经常</td>
+						<td>已婚，本科</td>
+						<td>经理</td>
+						<td>汽车2辆</td>
+						<td>月还款占月收入的10%</td>
+						<td>良好</td>
+						<td>无</td>
+						<td>维持现状</td>
+						<td></td>		
+					</tr>
+				</table>
+			</div>
+			<input type="submit" class="btn btn-info" value="提交"/>
+		</div><!--/row-fluid -->
+	</form><!--/content -->
+	 
+	<script src="../../../static/js/jquery-1.7.2.min.js"></script>
+	<script src="../../../static/js/bootstrap.min.js"></script>
+	<script src="../../../static/js/bootstrap-datepicker.js"></script>
+	<script src="../../../static/js/script.js"></script>
+	<script src="../../../static/js/process.js"></script>
+	<script type="text/javascript">
+		var max=0;
+		var jegs=0;
+		var num=0;
+		var idCard=0;
+		var phone=0;
+		function addTd(table,frameid){			
+			if(table=="whxx"){//是否申请过贷款
+				$("#"+table).append("<tr class='add'>" + 
+										"<td><input type='text' class='tbInput datepicker' data-date-format='yyyy-mm-dd' readonly/></td>" + 
+										"<td><select><option>电话联系</option><option>上门联系</option><option>网点服务</option></select></td>" + 
+										"<td><input type='text' class='tbInput'/></td>" + 
+										"<td><input type='text' class='tbInput'/></td>" + 
+										"<td><input type='text' class='tbInput'/></td>" + 
+										"<td><input type='text' class='tbInput'/></td>" + 
+										"<td><input type='text' class='tbInput'/></td>" + 
+										"<td><input type='text' class='tbInput'/></td>" + 
+										"<td><input type='text' class='tbInput'/></td>" + 
+										"<td><select><option>维持现状</option><option>提升额度</option><option>建议止付</option></select></td>" + 
+										"<td><input type='text' class='tbInput'/></td>" + 
+									"</tr>");   									
+			}
+			datepicker();
+			doubleIframe(frameid);
+		}
+	</script>
+</body>
+</html>

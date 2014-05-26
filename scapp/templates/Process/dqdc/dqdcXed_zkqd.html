@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+	<title>小微贷款业务管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+
+	<!-- The styles -->
+	<link href="/static/css/bootstrap.css" rel="stylesheet">
+	<link href="/static/css/main.css" rel="stylesheet">
+	<link href="/static/css/datepicker.css" rel="stylesheet">
+	<style type="text/css">	
+		input.btn-mini{width:20px;margin-top:0px;}	
+		input[type=text]{width:120px;}
+		select{width:100px;}
+	</style>
+</head>
+<body onload="sub();datepicker();">	
+	<form class="content">
+		<div class="tabbable">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#tab1" id="fdcxd" data-toggle="tab" onclick="$('#tab1').attr('class','tab-pane active');$('#tab2').attr('class','tab-pane');doubleIframe('dqdcXed_zkqd');">应付账款详单</a></li>
+				<li><a href="#tab2" data-toggle="tab" onclick="$('#tab1').attr('class','tab-pane');$('#tab2').attr('class','tab-pane active');doubleIframe('dqdcXed_zkqd');">应收账款详单</a></li>
+			</ul>						
+			<div class="tab-content">
+				<!--*********************************应付账款详单*******************************************-->
+				<div class="tab-pane active" id="tab1">
+					<i class="icon-bookmark"></i><span class="titletip">应付账款详单</span>		
+					<input type="button" value="+" onclick="addTd('yfzkxd','dqdcXed_zkqd')" class="btn btn-info btn-mini" />
+					<input type="button" value="-" onclick="removeTd('yfzkxd','dqdcXed_zkqd');sub()" class="btn btn-info btn-mini" />	
+					<div class="divBorder">	
+						<table class="table-list" cellspacing="10" id="yfzkxd">				
+							<tr>
+								<th>应付对象</th>  
+								<th>欠款日期</th>
+								<th>应付款日期</th>	
+								<th>应付金额</th>						
+								<th>应付类别</th>
+								<th>应付对象联系方式</th>						
+								<th>关系/生意模式</th>
+							</tr> 
+								<tr class="center">
+									<td><input type="text" name="name" class="tbInput" value="钓鱼杨海" /></td>
+									<td><input type="text" name="occur_date" value="2014-01-11" class='datepicker' data-date-format='yyyy-mm-dd' readonly/></td>
+									<td><input type="text" name="deadline" value="2014-01-11" class='datepicker' data-date-format='yyyy-mm-dd' readonly/></td>
+									<td><input type="text" name="original_price" class="subData1" value="20000" /></td>
+									<td>
+									<select name="pay_type" value="obj.pay_type" >
+										<option value='现金' selected>现金</option>										
+										<option value='预付款'>预付款</option>										
+										<option value='赊账'>赊账</option>
+										<option value='短期票据'>短期票据</option>
+										<option value='长期票据'>长期票据</option>
+									</select>
+									</td>
+									<td><input type="text" name="present_price" class="tbInput" value="1123456789013" /></td>
+									<td><input type="text" name="cooperation_history" class="tbInput" value="" />
+										<input type="hidden" name="mode_type" class="tbInput" value="obj.mode_type"/></td>
+								</tr>															
+						</table>
+						<table id="kcxx" class="table-list">
+						<tr>
+							<th style="border-top:none;">
+								<b>合计</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;						
+								总金额:<span id="sub1"></span>
+							</th>
+						</tr>		
+					</table>
+					</div>
+					<input type="submit" value="提交" class="btn btn-info"/>
+					<br/><br/><br/><br/><br/><br/>		
+				</div><!--/应付账款详单-->
+
+				<!--**************************************应收账款详单**************************************-->
+				<div class="tab-pane" id="tab2">
+					<i class="icon-bookmark"></i><span class="titletip">应收账款详单</span>		
+					<input type="button" value="+" onclick="addTd('yszkxd','dqdcXed_zkqd')" class="btn btn-info btn-mini" />
+					<input type="button" value="-" onclick="removeTd('yszkxd','dqdcXed_zkqd');sub()" class="btn btn-info btn-mini" />
+							
+					<div class="divBorder">	
+						<table class="table-list" cellspacing="10" id="yszkxd">				
+							<tr>
+								<th>应收对象</th>  
+								<th>欠款日期</th>
+								<th>应还款日期</th>	
+								<th>应收金额</th>						
+								<th>应收类别</th>
+								<th>应收对象联系方式</th>						
+								<th>关系/生意模式</th>
+							</tr> 
+								<tr class="center">
+									<td><input type="text" name="name" class="tbInput" value="大营陆天全" /></td>
+									<td><input type="text" name="occur_date" value="2014-01-11" class='datepicker' data-date-format='yyyy-mm-dd' readonly/></td>
+									<td><input type="text" name="deadline" value="2014-02-11" class='datepicker' data-date-format='yyyy-mm-dd' readonly/></td>
+									<td><input type="text" name="original_price" class="subData2" value="30000" /></td>
+									<td>
+									<select name="pay_type" value="obj.pay_type" >
+										<option value='现金' selected>现金</option>
+										<option value='预付款'>预付款</option>
+										<option value='赊账'>赊账</option>
+										<option value='短期票据'>短期票据</option>										
+										<option value='长期票据'>长期票据</option>
+									</select>
+									</td>
+									<td><input type="text" name="present_price" class="tbInput" value="1234564512" /></td>
+									<td>
+										<input type="text" name="cooperation_history" class="tbInput" value=" " />
+										<input type="hidden" name="mode_type" class="tbInput" value="obj.mode_type"/>
+									</td>
+								</tr>	
+						</table>
+						<table id="kcxx" class="table-list">
+						<tr>
+							<th style="border-top:none;">
+								<b>合计</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;						
+								总金额:<span id="sub2"></span>
+							</th>
+						</tr>		
+					</table>
+					</div>
+					<input name="hiddenId" type="hidden" value="id"/>
+					<input type="submit" value="提交" class="btn btn-info"/>
+					<br/><br/><br/><br/><br/><br/>
+
+				</div><!--应收账款详单-->									
+			</div><!-- tabContent -->
+		</div>
+	</form>
+
+	<script src="/static/js/jquery-1.7.2.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/bootstrap-datepicker.js"></script>
+	<script src="/static/js/script.js"></script>
+	<script src="/static/js/process.js"></script>
+	<script type="text/javascript">
+		var max=0;
+		var jegs=0;
+		var num=0;
+		var idCard=0;
+		var phone=0;
+		function sub(){
+			//var num=$(".tbData").length;			
+			//$("#sub1").text("总笔数："+num);
+			for(i=1;i<3;i++){
+				var sum=0;						
+				$.each($(".subData"+i),function(){ 
+					if(this.value=="")
+						sum=sum;
+					else
+						sum += parseFloat(this.value);					
+						$("#sub"+i).html(sum+"（<span class='je'>"+hjje($("#sub"+i),sum)+"</span>）"); 	
+				}); 
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+	<title>小微贷款业务管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+
+	<!-- The styles -->
+	<link href="/static/css/bootstrap.css" rel="stylesheet">
+	<link href="/static/css/main.css" rel="stylesheet">
+	<link href="/static/css/datepicker.css" rel="stylesheet">
+	<style type="text/css">
+		label{font-size: 12px;}	
+		textarea{width:80%;}	
+	</style>
+	<script type="text/javascript">
+		function setje(){
+			$('input[name=gszczj]').click();
+			$('input[name=loan_amount_num]').click();
+			$('input[name=month_repayment]').click();
+			$('input[name=loan_amount]').click();
+			$('input[name=overage]').click();
+			$('input[name=monthly_income]').click();
+			$('input[name=appraisal]').click();
+			$('input[name=mortgage]').click();
+			$('input[name=amount_recommended]').click();
+			$('input[name=monthly_repayment_amount]').click();
+			$('input[name=amount]').click();
+			$('input[name=monthly_repayment]').click();
+		}
+	</script>
+</head>
+
+<body onload="datepicker();setje()">	
+	<form class="content">
+		<i class="icon-bookmark"></i><span class="titletip">个人信息&nbsp;&nbsp;&nbsp;客户编号：<span id="customer_no">01</span></span>
+		<div class="divBorder">
+			<table class="table-list">
+				<tr>
+					<td class="table-label">姓名</td>
+					<td>
+						<span>王军忠</span>
+						<input type="hidden" name="customer_name" value=""/>
+					</td>	
+					<td class="table-label">性别</td>
+					<td>
+						<span>男</span>
+					</td>
+					<td class="table-label">手机</td>
+					<td><span id="">13813802000</span></td>
+					<td class="table-label">固定电话</td>
+					<td><span id="">0519-83291468</span></td>			
+				</tr>					
+				<tr>							
+					<td class="table-label">证件类型</td>
+					<td colspan="3"><span id="">身份证</span></td>	
+					<td class="table-label">证件号码</td>
+					<td colspan="3"><span id="">32040419890224314X</span></td>											
+				</tr>
+				<tr>
+					<td class="table-label">家庭地址</td>
+					<td colspan="7"><span id="">北京市朝阳区光华贸易中心3-2012店铺</span></td>							
+				</tr>	
+				<tr>
+					<td class="table-label">家庭情况表述</td>
+					<td colspan="7"><span id=""></span></td>							
+				</tr>	
+				<tr>
+					<td class="table-label">婚姻状况</td>
+					<td><span>丧偶</span></td>
+					<td class="table-label">居住条件</td>
+					<td><span id="">自置</span></td>	
+					<td class="table-label">教育程度</td>
+					<td colspan="3"><span id="">大学</span></td>				
+				</tr>					
+			</table>
+		</div>
+	
+	<!--**************************申请信息*********************************-->
+		<i class="icon-bookmark"></i><span class="titletip">申请信息</span>
+		<div class="divBorder">
+			<table class="table-list">				
+				<tr>
+					<td class="table-label">贷款金额（元）<font class="red">*</font></td>
+					<td>
+						<span id="loan_amount_num">	
+							<input type="text" name="loan_amount_num" value="100000" onclick="setJe(this)" maxlength="11" disabled/><br/>
+							<span class="je">人民币</span>	
+							<span class="errorInfo"></span>							
+						</span>	
+					</td>	
+					<td class="table-label">贷款期限（月）<font class="red">*</font></td>
+					<td>12月</td>	
+					<td class="table-label">月还款能力（元）<font class="red">*</font></td>
+					<td>
+						<span id="month_repayment">	
+							<input type="text" name="month_repayment" value="8000" onclick="setJe(this)" maxlength="11" disabled/><br/>
+							<span class="je">人民币</span>	
+							<span class="errorInfo"></span>							
+						</span>	
+					</td>						
+				</tr>	
+				<tr>
+					<td class="table-label">贷款用途<font class="red">*</font></td>
+					<td>
+						<select name="loan_purpose" disabled>
+							<option>固定资产流入</option>
+						</select>
+					</td>	
+					<td class="table-label">详细说明</td>
+					<td colspan="3"><input type="text" name="details" value=" " class="long" disabled/></td>						
+				</tr>
+				<tr>
+					<td class="table-label">还款来源</td>
+					<td colspan="5"><input type="text" name="repayment_source" value="营业收入" class="long" disabled/></td>									
+				</tr>	
+			</table>
+		</div>	
+	<!--*****************************************信贷历史**************************************************-->
+		<i class="icon-bookmark"></i><span class="titletip">信贷历史</span>
+		<div class="divBorder">
+			<table id="xdls" class="table-list">
+				<tr>
+					<th>融资来源</th>
+					<th>贷款金额(元)</th>
+					<th>期限(月)</th>							
+					<th>用途</th>
+					<th>发放日期</th>
+					<th>余额(元)</th>		
+					<th>担保</th>
+					<th>逾期信息</th>									
+				</tr>
+				<tr class="center"><!--后期Js中要增加ID字段-->
+					<td>
+						<span>	
+							<input type="text" name="financing_sources" value=" " onchange="spryMaxLength(this,3)" class="tbInput" disabled/><br/>
+							<span>&nbsp;</span>
+							<span class="errorInfo">字符数不得大于256</span>
+						</span>
+					</td>
+					<td>
+						<span>	
+							<input type="text" name="loan_amount" value="0" onkeyup="setJe(this);" maxlength="11" class="tbInput" onclick="setJe(this)" disabled/><br/>
+							<span class="je">人民币</span>	
+							<span class="errorInfo"></span>						
+						</span>
+					</td>							
+					<td>						
+						<input type="text" name="deadline" value=" " maxlength="5" class="tbInput" disabled/><br/>
+						<span>&nbsp;</span>
+					</td>	
+					<td>
+						<span>	
+							<input type="text" name="use" value=" " onchange="spryMaxLength(this,3)" class="tbInput" disabled/><br/>
+							<span>&nbsp;</span>
+							<span class="errorInfo">字符数不得大于256</span>
+						</span>
+					</td>
+					<td>
+						<span>
+						    <input type="text" name="release_date" value=" " class="tbInput datepicker" data-date-format="yyyy-mm-dd" disabled/><br/>
+							<span>&nbsp;</span>
+						</span>						
+					</td>	
+					<td>
+						<span>	
+							<input type="text" name="overage" value="0" onkeyup="setJe(this);" maxlength="11" class="tbInput" onclick="setJe(this)" disabled/> <br/>
+							<span class="je">人民币</span>
+							<span class="errorInfo"></span>						
+						</span>
+					</td>	
+					<td>
+						<span >	
+							<input type="text" name="guarantee" value=" " onchange="spryMaxLength(this,32)" class="tbInput" disabled/><br/>
+							<span>&nbsp;</span>
+							<span class="errorInfo">字符数不得大于32</span>
+						</span>
+					</td>
+					<td>
+						<span >	
+							<input type="text" name="late_information" value=" " onchange="spryMaxLength(this,256)" class="tbInput" disabled/><br/>
+							<span>&nbsp;</span>
+							<span class="errorInfo">字符数不得大于256</span>
+						</span>
+					</td>					
+				</tr>
+			</table>
+		</div>
+	<!--*****************************************共同借款人**************************************************-->
+		<i class="icon-bookmark"></i><span class="titletip">共同借款人</span>
+		<div class="divBorder">
+			<table id="gtjkr" class="table-list">	
+				<tr class="center"><!--后期Js中要增加ID字段-->
+					<td rowspan='2' class='table-label'>姓名<input type="text" name="name" class="tbInput" value="吕淑珍" disabled/></td>
+					<td>与客户关系<input type="text" name="relationship" class="tbInput" value="亲戚 " disabled/></td>	
+					<td>身份证号码<input type="text" name="id_number" class="tbInput" value="101101197908121261 " disabled/></td>
+					<td>家庭电话<input type="text" name="phone" class="tbInput" value="01081625388 " disabled/></td>
+					<td>主营业务或职务<input type="text" name="main_business" class="tbInput" value=" " disabled/></td>	
+					<td>经营地址或工作单位地址<input type="text" name="address" class="tbInput" value=" " disabled/></td>	
+					<td>主要资产<input type="text" name="major_assets" class="tbInput" value=" " disabled/></td>
+					<td>月收入<input type="text" name="monthly_income" class="tbInput" value=" " disabled/></td>
+				</tr>
+				<tr class='add'>
+					<td colspan='2'>家庭详细地址<input type='text' name='home_addr' class='tbInput' disabled/></td>	
+					<td>户籍所在地<input type='text' name='hj_addr' class='tbInput' disabled/></td>
+					<td>住房性质
+						<select name='home' disabled>
+							<option value='自有产权(按揭)'>自有产权(按揭)</option>
+							<option value='自有产权(无按揭)' selected>自有产权(无按揭)</option>
+							<option value='小产权'>小产权</option>
+							<option value='租用'>租用</option>
+							<option value='其他'>其他</option>
+						</select>
+					</td>
+					<td colspan='3'>备注<br/><input type='text' name='remark' onchange='spryMaxLength(this,256)' class='tbInput' disabled/></td>
+                </tr>
+			</table>
+		</div>
+		
+	<!--**************************担保信息*********************************-->
+		<i class="icon-bookmark"></i><span class="titletip">担保信息</span>
+		<div class="divBorder">
+			<table id="dbInformation" class="table-list">
+				<tr class="center"><!--后期Js中要增加ID字段-->
+					<td rowspan='2' class='table-label'>姓名<input type="text" name="name" class="tbInput" value="金亮" disabled/></td>
+					<td>与客户关系<input type="text" name="relationship" class="tbInput" value="亲属" disabled/></td>	
+					<td>身份证号码<input type="text" name="id_number" class="tbInput" value="32040419890224314X" disabled/></td>
+					<td>家庭电话<input type="text" name="phone" class="tbInput" value="13013802000" disabled/></td>
+					<td>主营业务或职务<input type="text" name="main_business" class="tbInput" value="公务员" disabled/></td>	
+					<td>经营地址或工作单位地址<input type="text" name="address" class="tbInput" value="东北旺乡政府" disabled/></td>	
+					<td>主要资产<input type="text" name="major_assets" class="tbInput" value="500000" disabled/></td>
+					<td>月收入<input type="text" name="monthly_income" class="tbInput" value="10000" disabled/></td>
+				</tr>
+				<tr class='add'>
+					<td colspan='2'>家庭详细地址<input type='text' name='home_addr' value='北京市海淀区' class='tbInput' disabled/></td>	
+					<td>户籍所在地<input type='text' name='hj_addr' value='北京' class='tbInput' disabled/></td>
+					<td>住房性质
+						<select name='home' disabled>
+							<option value='自有产权(按揭)'>自有产权(按揭)</option>
+							<option value='自有产权(无按揭)' selected>自有产权(无按揭)</option>
+							<option value='小产权'>小产权</option>
+							<option value='租用'>租用</option>
+							<option value='其他'>其他</option>
+						</select>
+					</td>
+					<td colspan='3'>备注<br/><input type='text' name='remark' value='' class='tbInput' disabled/></td>
+                </tr>
+			</table>
+		</div>
+	
+	<!--*****************************************建议抵押物**************************************************-->
+		<i class="icon-bookmark"></i><span class="titletip">建议抵押物</span>
+		<div class="divBorder">
+			<table id="ywdyw" class="table-list">
+				<tr>
+					<th>物品名称</th>
+					<th>所有者、地址</th>
+					<th>描述</th>							
+					<th>登记号</th>
+					<th>估价(元)</th>
+					<th>抵押(元)</th>		
+					<th width="30px">质押</th>							
+				</tr>
+				<tr class="center"><!--后期Js中要增加ID字段-->
+					<td>
+						<span>	
+							<input type="text" name="obj_name" value="自住用房" onchange="spryMaxLength(this,32)" class="tbInput" disabled/><br/>
+							<span>&nbsp;</span>
+							<span class="errorInfo">字符数不得大于32</span>
+						</span>
+					</td>			
+					<td>
+						<span>	
+							<input type="text" name="owner_address" value="王军忠,北京市朝阳区" onchange="spryMaxLength(this,128)" class="tbInput" disabled/><br/>
+							<span>&nbsp;</span>
+							<span class="errorInfo">字符数不得大于128</span>
+						</span>
+					</td>				
+					<td>
+						<span>	
+							<input type="text" name="description" value="商品房" onchange="spryMaxLength(this,256)" class="tbInput" disabled/><br/>
+							<span>&nbsp;</span>
+							<span class="errorInfo">字符数不得大于256</span>
+						</span>
+					</td>	
+					<td>
+						<input type="text" name="registration_number" value=" " onkeyup="value=value.replace(/\D/g,'')" maxlength="11" class="tbInput" disabled/><br/>
+						<span>&nbsp;</span>
+					</td>	
+					<td>
+						<span>	
+							<input type="text" name="appraisal" value="0" onkeyup="setJe(this);" maxlength="11" class="tbInput" onclick="setJe(this)" disabled/><br/>
+							<span class="je">人民币</span>
+							<span class="errorInfo"></span>						
+						</span>
+					</td>
+					<td>
+						<span>	
+							<input type="text" name="mortgage" value="0" onkeyup="setJe(this);" maxlength="11" class="tbInput" onclick="setJe(this)" disabled/><br/>
+							<span class="je">人民币</span>
+							<span class="errorInfo"></span>						
+						</span>
+					</td>	
+					<td><input type="checkbox" name="bool_mortgage" /></td>	
+				</tr>
+			</table>
+		</div>	
+		
+		<!--*****************************************风险分析以及调查结论**************************************************-->
+		<i class="icon-bookmark"></i><span class="titletip">风险分析以及调查结论</span>
+		<div class="divBorder">
+			<table class="table-list">				
+				<tr>
+					<td class="table-label">分析结论</td>
+					<td colspan="7">
+						<span>
+							<textarea name="analysis_conclusion" onchange="spryMaxLength(this,2048)" disabled> </textarea>
+							<span class="errorInfo">字符数不得大于2048</span>
+						<span>
+					</td>								
+				</tr>
+				
+				<tr>
+					<td class="table-label"> 建议担保方式</td>
+					<td colspan="3" >
+						<span>
+							<input type="text" style="width:70%" name="recommended_way_of_security" onchange="spryMaxLength(this,32)" value="" disabled/>
+							<span class="errorInfo">字符数不得大于32</span>
+						<span>
+					</td>
+					<td colspan="2" class="table-label"> 月付款占可支配收入比重</td>	
+					<td colspan="2">
+						<span>
+							<input type="text" style="width:40px" name="income_ratio" value="" onKeyUp="value=value.replace(/[^\d\.]/g,'')" onchange="check(this,0,100)" maxlength="4" disabled/>%<br/>
+							<span class="errorInfo">请输入0-100的数</span>
+						</span>
+					</td>	
+				</tr>
+				<tr>
+					<td class="table-label">需要审议的其他内容</td>
+					<td colspan="7">
+						<span>
+							<textarea name="other_deliberations" value="" style="width:80%" onchange="spryMaxLength(this,2048)" disabled></textarea>
+							<span class="errorInfo">字符数不得大于2048</span>
+						</span>						
+					</td>
+				</tr>	
+				<tr>					
+					<td class="table-label" rowspan="2">正反因素分析</td>
+					<td class="table-label">正</td>
+					<td colspan="4">
+						<span>
+							<textarea name="positive" value="" style="width:80%"onchange="spryMaxLength(this,2048)" disabled></textarea>
+							<span class="errorInfo">字符数不得大于2048</span>
+						</span>	
+					</td>
+				</tr>
+				<tr>
+					<td class="table-label">反</td>
+					<td colspan="4">
+						<span>
+							<textarea name="opposite" value="" style="width:80%"onchange="spryMaxLength(this,2048)" disabled></textarea>
+							<span class="errorInfo">字符数不得大于2048</span>
+						</span>	
+					</td>
+				</tr>
+			</table>
+		</div>
+	<!--*****************************************调查结论**************************************************-->
+		<div class="divBorder">
+			<table class="table-list">				
+				<tr>
+					<td class="table-label" style="font-size:12px;">客户信息收集与核实</td>
+					<td class="font-small">
+						
+							<input type="text" name="others" style="width:80px;" value=""/></label>
+					</td>											
+				</tr>
+			</table>
+		</div>
+	<!--*****************************************是否同意发放**************************************************-->
+		
+		<label onclick="$('#jyff').show();$('#jyfj').hide();doubleIframe('dqdcWd_jbqk');">
+			<input type="radio" name="bool_grant" value="1" checked disabled/>建议发放
+		</label>
+		<label onclick="$('#jyfj').show();$('#jyff').hide();doubleIframe('dqdcWd_jbqk');">
+			<input type="radio" name="bool_grant" value="0" disabled/>建议否决
+		</label><br/>	
+		
+	<!--*****************************************调查结论**************************************************-->
+		
+		<div class="divBorder" id="jyff">
+			<table class="table-list">				
+				<tr>
+					<td class="table-label" rowspan="3" style="width:60px;">调查结论</td>
+					<td class="table-label" style="width:80px;">金额（元）<font class="red">*</font></td>
+					<td>
+						<span>	
+							<input type="text" name="amount" style="width:100px;" value="100000" onkeyup="setJe(this);" maxlength="11" onclick="setJe(this)"/><br/>
+							<span class="je">人民币</span>
+							<span class="errorInfo"></span>						
+						</span>
+					</td>	
+					<td class="table-label" style="width:50px;">期限(月)<font class="red">*</font></td>
+					<td>
+						<select name="deadline" style="width:60px">							
+								<option value="12" selected>12</option>
+						</select>						
+					</td>	
+					<td class="table-label" style="width:50px;">利率<font class="red">*</font></td>
+					<td>
+						<span>
+							<input type="text" style="width:40px" name="rates" value="0.345" onKeyUp="value=value.replace(/[^\d\.]/g,'')" onchange="check(this,0,100)" maxlength="4"/>%<br/>
+							<span class="errorInfo">请输入0-100的数</span>
+						</span>
+					</td>
+					<td class="table-label" style="width:110px;">月还款额（元）<font class="red">*</font></td>
+					<td>
+						<span>	
+							<input type="text" name="monthly_repayment" value="8500" onkeyup="setJe(this);" maxlength="11" class="tbInput" onclick="setJe(this)"/><br/>
+							<span class="je">人民币</span>
+							<span class="errorInfo"></span>						
+						</span>
+					</td>										
+				</tr>
+				<tr>
+					<td class="table-label" style="width:80px;">建议理由/发放条件</td>
+					<td colspan="7">
+						<span>	
+							<textarea name="approve_reason" onchange="spryMaxLength(this,2048)">1.客户经营状况良好 2.抵押物足值</textarea>
+							<span class="errorInfo">字符数不得大于2048</span>
+						</span>
+					</td>															
+				</tr>
+			</table>
+		</div>
+	<!--*****************************************调查结论**************************************************-->
+		<div class="divBorder" id="jyfj" style="display:none;">
+			<table class="table-list">				
+				<tr>
+					<td class="table-label" rowspan="3" style="width:60px;">调查结论</td>					
+					<td class="table-label" style="width:80px;">否决原因</td>
+					<td colspan="7">
+						<span>	
+							<textarea name="refuse_reason" onchange="spryMaxLength(this,2048)"></textarea>
+							<span class="errorInfo">字符数不得大于2048</span>
+						</span>
+					</td>															
+				</tr>
+			</table>
+		</div>
+	</form>
+
+	<script src="/static/js/jquery-1.7.2.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/script.js"></script>
+	<script src="/static/js/process.js"></script>
+	<script src="/static/js/bootstrap-datepicker.js"></script>
+	<script type="text/javascript">
+		var max=0;
+		var jegs=0;
+		var num=0;
+		var idCard=0;
+		var phone=0;
+	</script>
+</body>
+</html>

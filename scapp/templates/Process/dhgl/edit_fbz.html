@@ -1,0 +1,513 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+	<title>小微贷款业务管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+
+	<!-- The styles -->
+	<link href="/static/css/bootstrap.css" rel="stylesheet">
+	<link href="/static/css/main.css" rel="stylesheet">
+	<style type="text/css">
+		textarea{width:80%;}
+		.table-list .table-label{width:180px;}
+	</style>	
+</head>
+
+<body onload="$('input[type=text]').click()"> 	
+	<form class="content">
+		<div class="well place">			
+			<i class="icon-home"></i><a href="#">流程管理</a>/<a href="#">贷后管理</a>
+		</div>			
+		<div class="row-fluid">	
+			<div class="divBorder">
+				<table class="table-list">
+					<table class="table-list">					
+					<tr>
+						<td class="table-label">客户经理</td>
+						<td><input type="text" name="" value="倪文彬" readonly /></td>
+						<td class="table-label">贷款金额</td>	
+						<td><input type="text" name="" value="100000" readonly /></td>			
+						<td class="table-label">还款期数</td>	
+						<td><input type="text" name="" value="12" readonly /></td>								
+					</tr>	
+					<tr>
+						<td class="table-label">客户姓名</td>
+						<td><input type="text" name="" value="王军忠" readonly /></td>
+						<td class="table-label">调查日期</td>	
+						<td><input type="text" name="" value="2014-04-16" class="datepicker" data-date-format="yyyy-mm-dd" readonly/></td>			
+						<td class="table-label">放款日期</td>	
+						<td><input type="text" name="" value="2014-03-16" class="datepicker" data-date-format="yyyy-mm-dd" disabled/></td>		
+					</tr>
+					<tr>
+						<td class="table-label">上次调查日期</td>	
+						<td><input type="text" name="" value="2014-03-16" class="datepicker" data-date-format="yyyy-mm-dd" readonly/></td>			
+						<td class="table-label">剩余贷款金额</td>	
+						<td colspan="1"><input type="text" name="" value="80000" readonly /></td>	
+						<td colspan="2">
+							<input type="submit" class="btn btn-info" value="保存"/>
+						</td>			
+					</tr>					
+				</table>
+			</div>
+			<!-- 一级tab -->
+			<ul id="tags" class="tags">				
+				<li class="selectTag">
+					<a onclick="selectTag('tagContent0',this);" href="javascript:void(0)">资产负债表</a> 
+				</li>
+				<li>
+					<a onClick="selectTag('tagContent1',this);" href="javascript:void(0)">损益表</a>
+				</li>
+			</ul>
+			<!-- 一级content -->
+			<div id="tagContent" class="Content">
+<!-- ******************************************************资产负债表********************************************************** -->
+				<div class="tagContent selectTag" id="tagContent0">
+					<i class="icon-bookmark"></i><span class="titletip">资产负债表</span>
+					<div class="divBorder">				
+						<table class="table-list">	
+							<tr>
+								<td class="table-label" colspan="2"><b>资产</b></td>
+								<td class="table-label" colspan="2"><b>负债</b></td>
+							</tr>
+							<tr>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;现金及银行存款
+								</td>
+								<td>
+									<span>	
+										<input type="text" name="cash_deposit"  value="10007" onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="sum3('cash_deposit','receivable','stock','total_current_assets');sum2('total_current_assets','total_fixed_assets','total_assets');cut2('total_assets','total_debt','owner_equity')"/>							
+										<br/><span class="je">人民币</span>
+										<span class="errorInfo"></span>	
+									</span>							
+								</td>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;应付账款
+								</td>						
+								<td>
+									<span>	
+										<input type="text" name="payable" value="0" onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="sum3('payable','short_loan','long_loan','total_debt');cut2('total_assets','total_debt','owner_equity')"/>							
+										<br/><span class="je">人民币</span>
+										<span class="errorInfo"></span>	
+									</span>							
+								</td>						
+							</tr>
+							<tr>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;应收账款
+								</td>
+								<td>
+									<span>	
+										<input type="text" name="receivable" value="161170" onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="sum3('cash_deposit','receivable','stock','total_current_assets');sum2('total_current_assets','total_fixed_assets','total_assets');cut2('total_assets','total_debt','owner_equity')"/>							
+										<br/><span class="je">人民币</span>
+										<span class="errorInfo"></span>	
+									</span>							
+								</td>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;短期借款
+								</td>
+								<td>
+									<span>	
+										<input type="text" name="short_loan" value="0" onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="sum3('payable','short_loan','long_loan','total_debt');cut2('total_assets','total_debt','owner_equity')"/>							
+										<br/><span class="je">人民币</span>
+										<span class="errorInfo"></span>	
+									</span>							
+								</td>						
+							</tr>					
+							<tr>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;存货
+								</td>
+								<td>
+									<span>	
+										<input type="text" name="stock" value="155680" onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="sum3('cash_deposit','receivable','stock','total_current_assets');sum2('total_current_assets','total_fixed_assets','total_assets');cut2('total_assets','total_debt','owner_equity')"/>							
+										<br/><span class="je">人民币</span>
+										<span class="errorInfo"></span>	
+									</span>							
+								</td>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;长期借款
+								</td>
+								<td>
+									<span>	
+										<input type="text" name="long_loan" value="0" onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="sum3('payable','short_loan','long_loan','total_debt');cut2('total_assets','total_debt','owner_equity')"/>							
+										<br/><span class="je">人民币</span>
+										<span class="errorInfo"></span>	
+									</span>							
+								</td>						
+							</tr>	
+							<tr>
+								<td class="table-label">
+									<b>&nbsp;&nbsp;&nbsp;&nbsp;流动资产合计</b>
+								</td>
+								<td>
+									<span>	
+										<input type="text" readonly name="total_current_assets" value="376857" onclick="setJe(this);"/>							
+										<br/><span class="je">人民币</span>
+										<span class="errorInfo"></span>	
+									</span>							
+								</td>
+								<td class="table-label">
+									<b>&nbsp;&nbsp;&nbsp;&nbsp;负债总计</b>
+								</td>	
+								<td>
+									<span>	
+										<input type="text" readonly name="total_debt" value="0" onclick="setJe(this);"/>							
+										<br/><span class="je">人民币</span>
+										<span class="errorInfo"></span>	
+									</span>							
+								</td>						
+							</tr>	
+							<tr>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;固定资产合计
+								</td>
+								<td>
+									<span>	
+										<input type="text" name="total_fixed_assets" value="5000" onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="sum2('total_current_assets','total_fixed_assets','total_assets');cut2('total_assets','total_debt','owner_equity')"/>							
+										<br/><span class="je">人民币</span>
+										<span class="errorInfo"></span>	
+									</span>							
+								</td>
+								<td class="table-label">
+									<b>&nbsp;&nbsp;&nbsp;&nbsp;所有者权益</b>
+								</td>
+								<td>
+									<span>	
+										<input type="text" readonly name="owner_equity" value="383023" onclick="setJe2(this);"/>							
+										<br/><span class="je">人民币</span>
+										<span class="errorInfo"></span>	
+									</span>							
+								</td>						
+							</tr>
+							<tr>
+								<td class="table-label">
+									<b>资产总计</b>
+								</td>
+								<td>
+									<span>	
+										<input type="text" readonly name="total_assets" value="383023" onclick="setJe(this);"/>							
+										<br/><span class="je">人民币</span>
+										<span class="errorInfo"></span>	
+									</span>							
+								</td>
+								<td class="table-label">
+									<b>负债及所有者权益</b>
+								</td>
+								<td>
+									<span>	
+										<input type="text" readonly name="debt_and_owner_equity" value="383023" onclick="setJe(this);" onclick="setJe(this);"/>							
+										<br/><span class="je">人民币</span>
+										<span class="errorInfo"></span>	
+									</span>							
+								</td>						
+							</tr>
+							<tr>
+								<td class="table-label">
+									<b>对资产负债表的评注</b>
+								</td>
+								<td colspan="5">
+									<textarea name="remark" onchange="spryMaxLength(this,1024)">住房一套30万元；累计折旧25000元。</textarea>	
+									<span class="errorInfo">字符数不得大于1024</span>									
+								</td>						
+							</tr>							
+						</table>
+					</div>
+				</div><!-- /资产负债表 -->
+<!-- *****************************************************损益表********************************************** -->
+				<div class="tagContent" id="tagContent1">
+					<i class="icon-bookmark"></i><span class="titletip">损益表</span>
+					<div class="divBorder">
+						<table class="table-list">
+							<tr>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;收入
+								</td>
+								<td>
+									<input type="text" name="income"  value="246720"  onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="cut2('income','cost','gross_profit');cut2('gross_profit','total_cost','net_profit');kzpsr()"/>
+									<span class="je">人民币</span>
+									<span class="errorInfo"></span>	
+								</td>
+							</tr>
+							<tr>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;变量成本
+								</td>
+								<td>
+									<input type="text" name="cost"  value="224000"  onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="cut2('income','cost','gross_profit');cut2('gross_profit','total_cost','net_profit');kzpsr()"/>
+									<span class="je">人民币</span>
+									<span class="errorInfo"></span>	
+								</td>
+							</tr>	
+							<tr>
+								<td class="table-label">
+									<b>毛利</b>
+								</td>
+								<td>
+									<input type="text" name="gross_profit"  value="22720"  readonly onclick="setJe2(this);"/>
+									<span class="je">人民币</span>
+									<span class="errorInfo"></span>	
+								</td>
+							</tr>
+							<tr>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;工资
+								</td>
+								<td>
+									<input type="text" name="salary" onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="jycbze();cut2('gross_profit','total_cost','net_profit');kzpsr()"/>
+									<span class="je">人民币</span>
+									<span class="errorInfo"></span>	
+								</td>				
+							</tr>	
+							<tr>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;社会保险
+								</td>
+								<td>
+									<input type="text" name="insurance"  onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="jycbze();cut2('gross_profit','total_cost','net_profit');kzpsr()"/>
+									<span class="je">人民币</span>
+									<span class="errorInfo"></span>	
+								</td>				
+							</tr>	
+							<tr>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;租金
+								</td>
+								<td>
+									<input type="text" name="rent"  value="583"  onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="jycbze();cut2('gross_profit','total_cost','net_profit');kzpsr()"/>
+									<span class="je">人民币</span>
+									<span class="errorInfo"></span>	
+								</td>				
+							</tr>		
+							<tr>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;交通运输费用
+								</td>
+								<td>
+									<input type="text" name="freight"  value="2400"  onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="jycbze();cut2('gross_profit','total_cost','net_profit');kzpsr()"/>
+									<span class="je">人民币</span>
+									<span class="errorInfo"></span>	
+								</td>				
+							</tr>	
+							<tr>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;维护费用
+								</td>
+								<td>
+									<input type="text" name="maintain" onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="jycbze();cut2('gross_profit','total_cost','net_profit');kzpsr()"/>
+									<span class="je">人民币</span>
+									<span class="errorInfo"></span>	
+								</td>				
+							</tr>		
+							<tr>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;水电费用
+								</td>
+								<td>
+									<input type="text" name="utility"  value="40"  onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="jycbze();cut2('gross_profit','total_cost','net_profit');kzpsr()"/>
+									<span class="je">人民币</span>
+									<span class="errorInfo"></span>	
+								</td>				
+							</tr>	
+							<tr>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;存货损失
+								</td>
+								<td>
+									<input type="text" name="stock_loss"  onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="jycbze();cut2('gross_profit','total_cost','net_profit');kzpsr()"/>
+									<span class="je">人民币</span>
+									<span class="errorInfo"></span>	
+								</td>				
+							</tr>	
+							<tr>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;税金
+								</td>
+								<td>
+									<input type="text" name="taxes"  onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="jycbze();cut2('gross_profit','total_cost','net_profit');kzpsr()"/>
+									<span class="je">人民币</span>
+									<span class="errorInfo"></span>	
+								</td>				
+							</tr>
+							<tr>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;其他
+								</td>
+								<td>
+									<input type="text" name="others" value="1000"  onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="jycbze();cut2('gross_profit','total_cost','net_profit');kzpsr()"/>
+									<span class="je">人民币</span>
+									<span class="errorInfo"></span>	
+								</td>				
+							</tr>
+							<tr>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;分期付款
+								</td>
+								<td>
+									<input type="text" name="stages"  onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="jycbze();cut2('gross_profit','total_cost','net_profit');kzpsr()"/>
+									<span class="je">人民币</span>
+									<span class="errorInfo"></span>	
+								</td>				
+							</tr>
+							<tr>
+								<td class="table-label">
+									<b>经营成本总额</b>
+								</td>
+								<td>
+									<input type="text" name="total_cost" value="4023" onclick="setJe(this);" readonly/>
+									<span class="je">人民币</span>
+									<span class="errorInfo"></span>	
+								</td>				
+							</tr>
+							<tr>
+								<td class="table-label">
+									<b>净利润</b>
+								</td>
+								<td>
+									<input type="text" name="net_profit" value="18697"  onclick="setJe2(this);" readonly/>
+									<span class="je">人民币</span>
+									<span class="errorInfo"></span>	
+								</td>				
+							</tr>
+							<tr>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;家庭及其他支出
+								</td>
+								<td>
+									<input type="text" name="other_pay" value="833" onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="kzpsr()"/>
+									<span class="je">人民币</span>
+									<span class="errorInfo"></span>	
+								</td>				
+							</tr>
+							<tr>
+								<td class="table-label">
+									&nbsp;&nbsp;&nbsp;&nbsp;其他收入
+								</td>
+								<td>
+									<input type="text" name="other_income"  onkeyup="setJe(this);" onclick="setJe(this);" maxlength="11" onblur="kzpsr()"/>
+									<span class="je">人民币</span>
+									<span class="errorInfo"></span>	
+								</td>	
+							</tr>
+							<tr>
+								<td class="table-label">
+									<b>可供支配的家庭收入</b>
+								</td>
+								<td>
+									<input type="text" name="family_income" value="17864" onclick="setJe2(this);" readonly/>
+									<span class="je">人民币</span>
+									<span class="errorInfo"></span>	
+								</td>				
+							</tr>
+							<tr>
+								<td class="table-label">
+									<b>对损益发展情况的评注</b>
+								</td>
+								<td colspan="5">
+									<textarea name="remark1" onchange="spryMaxLength(this,1024)"></textarea>	
+									<span class="errorInfo">字符数不得大于1024</span>									
+								</td>				
+							</tr>
+							<tr>
+								<td class="table-label">
+									<b>对整体经营发展及贷款应用的评注</b>
+								</td>
+								<td colspan="5">
+									<textarea name="remark2" onchange="spryMaxLength(this,1024)"> </textarea>	
+									<span class="errorInfo">字符数不得大于1024</span>									
+								</td>				
+							</tr>
+						</table>					
+					</div>
+				</div><!-- /损益表 -->				
+			</div><!-- /tagContent -->	
+		</div><!--/row-fluid -->
+	</form><!--/content -->
+	
+	
+	<script src="/static/js/jquery-1.7.2.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/script.js"></script>
+	<script type="text/javascript">
+		var max=0;
+		var jegs=0;
+		var num=0;
+		var idCard=0;
+		var phone=0;
+		function sum3(num1,num2,num3,sumnum){
+			var sum=0;
+			var a1=$("input[name="+num1+"]").val();
+			var a2=$("input[name="+num2+"]").val();
+			var a3=$("input[name="+num3+"]").val();
+			if(a1==""){a1=0;}else{a1=parseInt(a1);}
+			if(a2==""){a2=0;}else{a2=parseInt(a2);}
+			if(a3==""){a3=0;}else{a3=parseInt(a3);}
+			sum=a1+a2+a3;
+			$("input[name="+sumnum+"]").val(sum);
+			$("input[name="+sumnum+"]").click();
+		}
+		function sum2(num1,num2,sumnum){
+			var sum=0;
+			var a1=$("input[name="+num1+"]").val();
+			var a2=$("input[name="+num2+"]").val();
+			if(a1==""){a1=0;}else{a1=parseInt(a1);}
+			if(a2==""){a2=0;}else{a2=parseInt(a2);}
+			sum=a1+a2;
+			$("input[name="+sumnum+"]").val(sum);
+			$("input[name=debt_and_owner_equity]").val(sum);
+			$("input[name="+sumnum+"]").click();
+			$("input[name=debt_and_owner_equity]").click();
+		}
+		function cut2(num1,num2,sumnum){
+			var sum=0;
+			var a1=$("input[name="+num1+"]").val();
+			var a2=$("input[name="+num2+"]").val();
+			if(a1==""){a1=0;}else{a1=parseInt(a1);}
+			if(a2==""){a2=0;}else{a2=parseInt(a2);}
+			sum=a1-a2;
+			$("input[name="+sumnum+"]").val(sum);
+			$("input[name="+sumnum+"]").click();
+		}
+		function jycbze(){//经营成本总额
+			var sum=0;
+			var a1=$("input[name=salary]").val();
+			var a2=$("input[name=insurance]").val();
+			var a3=$("input[name=rent]").val();
+			var a4=$("input[name=freight]").val();
+			var a5=$("input[name=maintain]").val();
+			var a6=$("input[name=utility]").val();
+			var a7=$("input[name=stock_loss]").val();
+			var a8=$("input[name=taxes]").val();
+			var a9=$("input[name=others]").val();
+			var a10=$("input[name=stages]").val();
+			if(a1==""){a1=0;}else{a1=parseInt(a1);}
+			if(a2==""){a2=0;}else{a2=parseInt(a2);}
+			if(a3==""){a3=0;}else{a3=parseInt(a3);}
+			if(a4==""){a4=0;}else{a4=parseInt(a4);}
+			if(a5==""){a5=0;}else{a5=parseInt(a5);}
+			if(a6==""){a6=0;}else{a6=parseInt(a6);}
+			if(a7==""){a7=0;}else{a7=parseInt(a7);}
+			if(a8==""){a8=0;}else{a8=parseInt(a8);}
+			if(a9==""){a9=0;}else{a9=parseInt(a9);}
+			if(a10==""){a10=0;}else{a10=parseInt(a10);}
+			sum=a1+a2+a3+a4+a5+a6+a7+a8+a9+a10;
+			$("input[name=total_cost]").val(sum);
+			$("input[name=total_cost]").click();
+		}
+		function kzpsr(){//可供支配的家庭收入
+			var sum=0;
+			var a1=$("input[name=net_profit]").val();
+			var a2=$("input[name=other_pay]").val();
+			var a3=$("input[name=other_income]").val();
+			if(a1==""){a1=0;}else{a1=parseInt(a1);}
+			if(a2==""){a2=0;}else{a2=parseInt(a2);}
+			if(a3==""){a3=0;}else{a3=parseInt(a3);}
+			sum=a1-a2+a3;
+			$("input[name=family_income]").val(sum);
+			$("input[name=family_income]").click();
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+	<title>小微贷款业务管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+
+	<!-- The styles -->
+	<link href="../../../static/css/bootstrap.css" rel="stylesheet">
+	<link href="../../../static/css/main.css" rel="stylesheet">
+	<link href="../../../static/css/datepicker.css" rel="stylesheet">
+	<!-- ************************验证样式************************-->
+	<script src="../../../static/SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+	<link href="../../../static/SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+    	.tbblur1{width:100px;height:20px;}
+    </style>
+
+</head>
+
+<body onload="datepicker();sum()">
+<form id="getResult" method="GET">
+    <input type="hidden" name="beg_date" value="beg_date" />
+    <input type="hidden" name="end_date" value="end_date" />
+    <input type="hidden" name="yunying_loan_officer" value="user_id" />
+
+	<div class="content">
+		<div class="well place">			
+			<i class="icon-home"></i><a href="#">客户经理管理</a>/<a href="#">工时记录</a>
+		</div>			
+		<div class="row-fluid">			
+			<i class="icon-bookmark"></i><span class="titletip">工时记录</span>
+
+
+			<div style="margin-bottom:5px;">
+				<a type="button" class="btn btn-info" href="#" onclick="iframe('Performance/gsjl/new_gsjl')">新增</a>
+			</div>
+		    <div class="divBorder" id="tableFrame">
+				<table class="table-list">
+					<thead id="tableFrameTitle">
+						<tr>
+							<th>日期</th>
+							<th>姓名</th>
+							<th>工作类型</th>
+							<th>工作名称</th>
+							<th>工作开始时间</th>
+                            <th>工作结束时间</th>
+							<th>耗时</th>
+							<th>备注</th>
+						</tr>
+					</thead>
+					<tbody class="center" id="table_result">
+						<tr>							
+							<td>2014-03-07</td>
+							<td>熊雷</td>
+							<td>协助客户</td>
+							<td>开立账户</td>
+							<td>9:30</td>
+                            <td>11:30</td>
+                            <td>2</td>
+                            <td></td>
+						</tr>
+						<tr>							
+							<td>2014-03-06</td>
+							<td>李丽</td>
+							<td>业务咨询</td>
+							<td>接听电话咨询</td>
+							<td>13:30</td>
+                            <td>15:00</td>
+                            <td>1.5</td>
+                            <td></td>
+						</tr>
+						<tr>							
+							<td>2014-03-06</td>
+							<td>葛翔</td>
+							<td>市场营销</td>
+							<td>准备宣传资料</td>
+							<td>13:00</td>
+                            <td>15:00</td>
+                            <td>2</td>
+                            <td></td>
+						</tr>
+						<tr>							
+							<td>2014-03-06</td>
+							<td>倪文彬</td>
+							<td>审贷会</td>
+							<td>审贷会陈述</td>
+							<td>9:00</td>
+                            <td>10:00</td>
+                            <td>1</td>
+                            <td></td>
+						</tr>
+						<tr>							
+							<td>2014-03-05</td>
+							<td>李丽</td>
+							<td>业务咨询</td>
+							<td>接听电话咨询</td>
+							<td>13:00</td>
+                            <td>13:30</td>
+                            <td>0.5</td>
+                            <td></td>
+						</tr>
+						<tr>							
+							<td>2014-03-05</td>
+							<td>李丽</td>
+							<td>市场营销</td>
+							<td>准备宣传资料</td>
+							<td>9:00</td>
+                            <td>11:00</td>
+                            <td>2</td>
+                            <td></td>
+						</tr>
+						<tr>							
+							<td>2014-03-04</td>
+							<td>吉力</td>
+							<td>协助调查分析</td>
+							<td>跟随分析客户经营场所</td>
+							<td>13:00</td>
+                            <td>14:30</td>
+                            <td>1.5</td>
+                            <td></td>
+						</tr>
+						<tr>							
+							<td>2014-03-04</td>
+							<td>吉力</td>
+							<td>调查前准备</td>
+							<td>翻看同类型档案</td>
+							<td>9:00</td>
+                            <td>11:30</td>
+                            <td>2.5</td>
+                            <td></td>
+						</tr>
+						<tr>							
+							<td>2014-03-04</td>
+							<td>倪文彬</td>
+							<td>市场营销</td>
+							<td>准备宣传资料</td>
+							<td>9:00</td>
+                            <td>10:00</td>
+                            <td>1</td>
+                            <td></td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+			<div class="page-div">
+				<span style="CURSOR: pointer">&lt;&lt;</span>
+				&#160;第&#160;<font color="#0088cc">1</font>&#160;页&#160;
+				&#160;共&#160;<font color="#0088cc">1</font>&#160;页&#160;
+				<span style="CURSOR: pointer">&gt;&gt;</span>
+			</div>
+
+              <!--   <input type="submit" class="btn btn-info" value="导出excel"
+                       onclick="submitFormWithMethod('getResult','/Cust_mgr/search_result/1','POST')"/> -->
+
+		</div><!--/row-fluid -->
+	</div><!--/content -->
+
+	<script src="../../../static/js/jquery-1.7.2.min.js"></script>
+	<script src="../../../static/js/bootstrap.min.js"></script>
+	<script src="../../../static/js/bootstrap-datepicker.js"></script>
+	<script src="../../../static/js/script.js"></script>	
+    <script src="../../../static/js/Loan_Calculator.js"></script>
+	<script type="text/javascript">
+		var max=0;
+		var jegs=0;
+		var num=0;
+		var idCard=0;
+		var phone=0;
+		var sprytextfield1 = new Spry.Widget.ValidationTextField("loan_account", "none", {validateOn:["blur"]});
+		var sprytextfield2 = new Spry.Widget.ValidationTextField("loan_contract_number", "none", {validateOn:["blur"]});
+		//var sprytextfield3 = new Spry.Widget.ValidationTextField("loan_period", "none", {validateOn:["blur"]});
+		var sprytextfield4 = new Spry.Widget.ValidationTextField("annual_interest_rate", "none", {validateOn:["blur"]});
+		function sum(){
+			var sum=0;
+			var value;
+			$(".hs").each(function(){
+				if(this.innerHTML=="")
+					value=0;
+				else
+					value=parseFloat(this.innerHTML);
+				
+				sum+=value;
+			})			
+			$("#sum").text(sum);
+		}
+
+	</script>
+ </form>
+</body>
+</html>

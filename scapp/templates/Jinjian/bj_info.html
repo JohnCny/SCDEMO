@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+	<title>小微贷款业务管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+
+	<!-- The styles -->
+	<link href="/static/css/bootstrap.css" rel="stylesheet">
+	<link href="/static/css/main.css" rel="stylesheet">
+	<link href="/static/css/datepicker.css" rel="stylesheet">
+	<style type="text/css">
+		.table-list .table-label{width:160px}
+	</style>	
+</head>
+
+<body onload="datepicker();">	
+	<form class="content">
+		<div class="well place">			
+			<i class="icon-home"></i><a href="#">进件管理</a>/<a href="#">补件信息</a>		
+		</div>	
+		<div class="row-fluid">
+			<div class="divBorder">				
+				<table class="table-list">
+					<tr>
+						<td class="table-label">申请单号</td>
+						<td style="width:190px">001</td>
+						<td class="table-label">客户名称</td>
+						<td style="width:190px">王军忠</td>
+						<td class="table-label">业务类型</td>
+						<td>信用卡</td>
+					</tr>
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">文件信息</span>
+			<div class="divBorder">				
+				<table class="table-list" cellspacing="10" id="uesr-list">
+					<tr>
+						<td class="table-label">主卡身份证明</td>
+						<td style="width:190px">
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">附卡身份证明</td>
+						<td style="width:190px">
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">工作证明文件</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="table-label">收入证明文件</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">房产证或合同</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">存款证明</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="table-label">驾驶证</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">收入-社保</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">财力-我行证券</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="table-label">财力-他行证券</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">财力-其他</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">营业执照</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="table-label">他行卡账单</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">分行推荐函</td>
+						<td colspan="3">
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="table-label">其他文件分类1</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">其他文件收到情况1</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">其他文件1</td>
+						<td><input type="text" name=""/></td>
+					</tr>
+					<tr>
+						<td class="table-label">其他文件分类2</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">其他文件收到情况2</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">其他文件2</td>
+						<td><input type="text" name=""/></td>
+					</tr>
+					<tr>
+						<td class="table-label">其他文件分类3</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">其他文件收到情况3</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">其他文件3</td>
+						<td><input type="text" name=""/></td>
+					</tr>
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">补件原因</span>
+			<div class="divBorder">				
+				<table class="table-list" cellspacing="10" id="uesr-list">
+					<tr>
+						<td class="table-label">补件原因码一</td>
+						<td style="width:190px">
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">补件原因码二</td>
+						<td style="width:190px">
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">补件原因码三</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+					</tr>					
+					<tr>
+						<td class="table-label">补件原因码四</td>
+						<td>
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+						<td class="table-label">补件原因码五</td>
+						<td colspan="3">
+							<select name="">
+								<option></option>
+							</select>
+						</td>
+					</tr>					
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">补件完成日期</span>
+			<div class="divBorder">				
+				<table class="table-list" cellspacing="10" id="uesr-list">
+					<tr>
+						<td class="table-label">补件原因码一</td>
+						<td>
+							<input type="text" name="" class="datepicker short" data-date-format="yyyy-mm-dd" readonly/>
+						</td>						
+					</tr>				
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">补件完成标识</span>
+			<div class="divBorder">				
+				<table class="table-list" cellspacing="10" id="uesr-list">
+					<tr>
+						<td class="table-label">补件完成标识</td>
+						<td>
+							<select name="">
+								<option>补件操作中</option>
+								<option>补文件/补信息完成</option>
+								<option>客户要求取消申请</option>
+								<option>多次联系均无法联系</option>
+								<option>客户不同意补件</option>
+								<option>补件操作中</option>
+								<option>补件操作中</option>
+								<option>补件操作中</option>
+								<option>补件操作中</option>
+							</select>	
+						</td>	
+					</tr>				
+				</table>
+			</div>
+			<i class="icon-bookmark"></i><span class="titletip">补件意见</span>
+			<div class="divBorder">				
+				<table class="table-list" cellspacing="10" id="uesr-list">
+					<tr>
+						<td class="table-label">补件意见</td>
+						<td><textarea></textarea></td>	
+					</tr>				
+				</table>
+			</div>
+			<input type="button" class="btn btn-info" value="提交"/>
+		</div><!--/row-fluid -->
+	</form><!--/content -->
+	
+	<script src="/static/js/jquery-1.7.2.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/bootstrap-datepicker.js"></script>
+	<script src="/static/js/script.js"></script>
+</body>
+</html>

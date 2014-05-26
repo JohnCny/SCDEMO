@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>	
+	<meta charset="utf-8">
+	<title>小微贷款业务管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+
+	<!-- The styles -->
+	<link href="/static/css/bootstrap.css" rel="stylesheet">
+	<link href="/static/css/main.css" rel="stylesheet">
+		
+</head>
+
+<body onload="setTimeOut();">
+	<div class="content">			
+		<div class="row-fluid">
+			<div class="well place">			
+				<i class="icon-home"></i><a href="#">流程管理</a>/<a href="#">贷后管理</a>
+			</div>	
+			
+			<i class="icon-bookmark"></i><span class="titletip">管理信息列表</span>
+			<div style="margin-bottom:5px;">
+				<a type="button" class="btn btn-info" href="#" onclick="iframe('Process/dhgl/new_fbz')">新增非标准</a>
+			</div>
+			<div class="divBorder">				
+				<table class="table-list" cellspacing="10" id="uesr-list">
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th>日期</th>							
+							<th>管理类型</th>
+							<th>客户经理</th>
+						</tr>
+					</thead>
+					<tbody class="center">
+						<tr onclick="changeColor(this)">
+							<td>01</td>
+							<td><a href="#" onclick="iframe('Process/dhgl/edit_fbz')">2014-02-01</a></td>
+							<td>非标准</td>
+							<td>倪文彬</td>							
+						</tr>							
+					</tbody>
+				</table>
+			</div>
+		</div><!--/row-fluid -->
+	</div><!--/content -->
+	
+	<script src="/static/js/jquery-1.7.2.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿<html>
+<head>
+<script type="text/javascript" src="/static/ofc2/json2.js"></script>
+<script type="text/javascript" src="/static/ofc2/swfobject.js"></script>
+</head>
+<body>
+<h2>柱状图</h2><input type="button" onclick="OFC.jquery.imageData('my_chart');" value="导出">
+<form id="content" method="POST" action="/Report/flash/export_pic" target="targetFrame">
+  <div id="my_chart"></div>
+  <input type="hidden" id="imageData" name="imageData">
+</form>
+<iframe id="targetFrame" name="targetFrame" style="width:0;height:0;display:none"></iframe>
+</body>
+
+<script type="text/javascript">
+swfobject.embedSWF("/static/ofc2/open-flash-chart-SimplifiedChinese.swf", "my_chart",
+  "150%", "400", "9.0.0", "expressInstall.swf",
+  {"data-file":"/Report/create/bar_3d"});
+
+</script>
+
+<script type="text/javascript">
+  OFC = {};
+
+  OFC.jquery = {
+      name: "jQuery",
+      version: function(src) { 
+        return $('#'+ src)[0].get_version() 
+      },
+      rasterize: function (src, dst) {
+       $('#'+ dst).replaceWith(OFC.jquery.image(src)) 
+      },
+      image: function(src) { 
+        return "<img src='data:image/png;base64," + $('#'+src)[0].get_img_binary() + "' />"
+      },
+      imageData: function(src) { 
+        $("#imageData").val($('#'+src)[0].get_img_binary());
+        submitForm('content','/Report/flash/export_pic');
+      }
+  };
+
+  // Using an object as namespaces is JS Best Practice. I like the Control.XXX style.
+  //if (!Control) {var Control = {}}
+  //if (typeof(Control == "undefined")) {var Control = {}}
+  if (typeof(Control == "undefined")) {var Control = {OFC: OFC.jquery}};
+
+</script>
+  <script src="/static/js/jquery-1.7.2.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  <script src="/static/js/script.js"></script>
+</html>
